@@ -1,0 +1,31 @@
+! URxvt ------------------------------
+!URxvt*font: Terminus:style = Regular: size=10
+!URxvt*font: xft:Terminus:pixelsize=14, \xft:Sazanami:antialias=true, \xft:Baekmuk Gulim
+!URxvt*font: xft:Terminus:bold:size=11
+!URxvt.font:                xft:PragmataPro:pixelsize=16
+!URxvt.boldFont:            xft:PragmataPro:pixelsize=16:bold
+!URxvt.italicFont:          xft:PragmataPro:pixelsize=16:italic
+!URxvt.boldItalicFont:      xft:PragmataPro:pixelsize=16:bold:italic
+!URxvt.letterSpace:         -1
+Xcursor.theme: DMZ-White
+URxvt*font: 		xft:Terminus:size=12, xft:Noto Sans:size=12
+URxvt*boldFont: 	xft:Terminus:size=12:bold,xft:Noto Sans:size=12:bold
+URxvt*italicFont:	xft:Terminus:size=12:italic,xft:Noto Sans:size=12:italic
+URxvt*bolditalicFont:	xft:Terminus:size=12:bold:italic,xft:Noto Sans:size=12:bold:italic
+URxvt.letterSace:	-3
+
+Urxvt.*VT100.colorBDMode: true
+URxvt.*VT100.colorBD: red
+URxvt.*VT100.colorULMode: true
+URxvt.*VT100.colorUL: cyan
+URxvt.*VT100.veryBoldColors: 6
+
+URxvt.*background: rgb:00/00/00
+URxvt.*foreground: rgb:00/ff/00
+Urxvt.*transparent: true
+Urxvt.*shading: 20
+URxvt.scrollBar: false
+
+URxvt.url-launcher:        /usr/bin/chromium
+URxvt.keysym.M-Delete:     perl:matcher:list
+URxvt.colorUL:             #7780a1

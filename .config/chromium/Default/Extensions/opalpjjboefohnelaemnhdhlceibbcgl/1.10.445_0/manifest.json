@@ -1,0 +1,17 @@
+{
+   "app": {
+      "launch": {
+         "web_url": "https://hola.org/hola_app"
+      },
+      "urls": [ "https://hola.org/hola_app" ]
+   },
+   "description": "Access websites blocked in your country, company or school with Hola! Hola is free and easy to use!",
+   "icons": {
+      "128": "icon.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvlly4j43cPxWKxfOWLmJzgPDxjUaYfFKInf2f+FHF1GGDNyrRFOkFOSWEFbDseNpIgPLgDBgCSw6mT3upj7MKqdx2M/4GZSJSJByQBtQPZafiLLyg+O3q2hK+bBuWWYZ8dW3f9sVOhYqdQ14YRxs9Q2SJyuM6TNmjOMfQmW3RE97mFK/1j132NRaMYKLS/9GAL82D9uHbgtN0/5suNlXcopULtTeasv8Ngg0Bs+x335GNFzwTJBKg3a3O22eHWELIq8Q3URPwVkUarJJwlz/gyZEx/EVCE8gCDJwmfJRiG+csv3uBF2p1Ob65NkcyKGWJFsEe27UUQ119UmPIQaLLwIDAQAB",
+   "manifest_version": 2,
+   "name": "Hola - Unlimited Proxy VPN",
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.10.445"
+}
