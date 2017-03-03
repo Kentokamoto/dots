@@ -1,0 +1,101 @@
+"General
+" ======
+"" start w/ relative line numbers
+set relativenumber
+
+" Plugins
+" =======
+"
+" vundle
+""filetype must be turned off before vundle commands
+filetype off
+""" set the runtime path to include vundle, and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+""" vundle modules to load
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'mbbill/undotree'
+"Plugin 'Valloric/YouCompleteMe'
+"Plugin 'tpope/vim-markdown'
+"Plugin 'yuratomo/w3m.vim'
+call vundle#end()
+"
+""" helpful vundle hints (to be run inside vim)
+":PluginList - list plugins
+":PluginInstall - install plugins
+":PluginInstall! - update plugins
+":PluginSearch foo - search for plugin foo
+":PluginClean - remove unused plugins
+"
+"" turn filetype recognition back on
+filetype plugin indent on
+
+
+" save and load folds automatically
+"autocmd BufWinLeave *.* mkview!
+"autocmd BufWinEnter *.* silent loadview
+
+"" 'control+n' to reset highlighting (e.g. after a search or search/replace)
+"nnoremap <C-n> :nohl<CR>
+
+"" 'space + <char>' to insert character <char>
+nnoremap <Space> i_<Esc>r
+
+"" show trailing spaces as '_', tabs as '>   '
+"set list listchars=tab:>\ ,eol:Â¬,extends:Â,precedes:Â«
+"set list listchars=tab:\ \ ,trail:_,extends:Â»,precedes:Â«
+"map <leader>lc :set list!<cr>
+
+" status bar
+set laststatus=2
+let g:airline_theme='jellybeans'
+
+
+"" enable folder/project -specific vimrc
+"set exrc
+"" ... and restrict what you can do with it
+"set secure
+
+"" ycm options
+
+""" set default path for ycm conf
+"let g:ycm_extra_conf_globlist = ['$HOME/documents/programming/*','!~/*']
+""" stop ycm from confirming ycm conf file
+"let g:ycm_confirm_extra_conf = 0
+""" disable ycm highlighing errors
+"let g:ycm_enable_diagnostic_highlighting = 0
+
+
+" set foldmethod to 'indent' for python files
+"autocmd BufRead,BufNewFile,BufEnter *.py  set foldmethod=indent
+
+"autocmd BufRead,BufNewFile *.c,*.cc,*.cpp,*.h let @b=':!make'
+
+"autocmd BufRead,BufNewFile *.tex,*.md let @b=':wa:!build_pdf %'
+"  \ | let @p=':wa:!ssh_print mh247-19 %:r.pdf'
+"  \ | let @o=':!mupdf %:r.pdf &> /dev/null &'
+
+"autocmd BufRead,BufNewFile *.ino let @b=':!ano build -m fio'
+"  \ | let @u=':!ano build -m fio:!ano upload -m fio'
+
+" autocmd BufRead,BufNewFile *.tex let @w=':w:!pdflatex %:r; bibtex %:r;
+"pdflatex %:r; pdflatex %:r'
+"    \ | let @o=':!mupdf %:r.pdf &> /dev/null &'
+""    \ | let @p=':wa:!ssh_print m_mh247 %:r.pdf'
+
+"autocmd BufEnter * colorscheme custom
+"autocmd BufEnter *.md colorscheme custom_md
+
+"Make syntax colors
+syntax on
+
+augroup Shebang
+	autocmd BufNewFile *.py 0put =\"#!/usr/bin/env python\<nl># -*- coding:
+	autocmd BufNewFile *.rb 0put =\"#!/usr/bin/env ruby\<nl># -*- coding:
+	autocmd BufNewFile *.tex 0put =\"%&plain\<nl>\"|$
+	autocmd BufNewFile *.\(cc\|hh\) 0put =\"//\<nl>//
+				\".expand(\"<afile>:t\").\" -- \<nl>//\<nl>\"|2|start!
+augroup END
