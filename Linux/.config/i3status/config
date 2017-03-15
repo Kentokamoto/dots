@@ -16,6 +16,7 @@ order += "disk /"
 order += "run_watch DHCP"
 order += "run_watch VPN"
 order += "wireless _first_"
+order += "wireless ra0"
 order += "ethernet _first_"
 order += "battery 0"
 order += "load"
@@ -25,6 +26,10 @@ wireless _first_ {
         format_up = "W: (%quality at %essid) %ip"
         format_down = "W: down"
 }
+wireless ra0 {
+	format_up = "W Adapter: (%quality at %essid) %ip"
+	format_down = "W Adapter: down"
+}
 
 ethernet _first_ {
         # if you use %speed, i3status requires root privileges
@@ -33,7 +38,15 @@ ethernet _first_ {
 }
 
 battery 0 {
-        format = "%status %percentage %remaining"
+		format_down = "No battery"
+		status_chr = "⚡ CHR"
+		status_bat = "🔋 BAT"
+		status_unk = "? UNK"
+		status_full = "☻ FULL"
+		last_full_capacity = true        
+		hide_seconds = true
+		format = "%status %percentage %remaining"
+		integer_battery_capacity = true
 }
 
 run_watch DHCP {
@@ -49,7 +62,7 @@ tztime local {
 }
 
 load {
-        format = "%1min"
+        format = "CPU %1min"
 }
 
 disk "/" {
