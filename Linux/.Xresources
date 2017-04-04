@@ -1,31 +1,43 @@
 !
+URxvt.termName: xterm-256color
 !URxvt ------------------------------
-!URxvt*font: Terminus:style = Regular: size=10
 !URxvt*font: xft:Terminus:pixelsize=14, \xft:Sazanami:antialias=true, \xft:Baekmuk Gulim
-!URxvt*font: xft:Terminus:bold:size=11
-!URxvt.font:                xft:PragmataPro:pixelsize=16
-!URxvt.boldFont:            xft:PragmataPro:pixelsize=16:bold
-!URxvt.italicFont:          xft:PragmataPro:pixelsize=16:italic
-!URxvt.boldItalicFont:      xft:PragmataPro:pixelsize=16:bold:italic
-!URxvt.letterSpace:         -1
-Xcursor.theme: DMZ-White
-URxvt.font: 		xft:Monospace:size=11
-URxvt.boldFont: 	xft:Monospace:size=11:bold
-URxvt.italicFont:	xft:Monospace:size=11:italic
-URxvt.bolditalicFont:	xft:Monospace:size=11:bold:italic
-URxvt.letterSace:	-1
+!Xcursor.theme: neutral
+!URxvt.font:xft:Monospace:size=11
+!URxvt.font: xft:Anonymous Pro for Powerline:pixelsize=11
+!URxvt.font: xft:Monofur for Powerline:pixelsize=36
+!URxvt.font: xft:Bitstream Vera Sans Mono for Powerline:pixelsize=12
+!URxvt.font: xft:DejaVu\ Sans\ Mono\ for\ Powerline:pixelsize=12
+!URxvt.font: xft:Droid Sans Mono for Powerline:style=Regular
+!URxvt.font: xft:Inconsolata for Powerline:pixelsize=36
+!URxvt.font: xft:Terminus (TTF) for Powerline:pixelsize=36
+!URxvt.font: xft:Inconsolata\-dz for Powerline:pixelsize=36
+!URxvt.font: xft:Inconsolata\-g for Powerline:pixelsize=36
+URxvt.font: xft:Liberation Mono for Powerline,Literation Mono Powerline:style=Regular
+!URxvt.font: xft:Meslo LG L DZ for Powerline:pixelsize=36
+!URxvt.font: xft:Meslo LG L for Powerline:pixelsize=36
+!URxvt.font: xft:Meslo LG M DZ for Powerline:pixelsize=36
+!URxvt.font: xft:Meslo LG M for Powerline:pixelsize=36
+!URxvt.font: xft:Meslo LG S DZ for Powerline:pixelsize=36
+!URxvt.font: xft:Meslo LG S for Powerline:pixelsize=36
+!URxvt.font: xft:Source Code Pro for Powerline:pixelsize=36
+!URxvt.font: xft:Terminess Powerline:pixelsize=32:style=bold
+!URxvt.font: xft:Ubuntu Mono derivative Powerline:pixelsize=36
 
-Urxvt.*VT100.colorBDMode: true
-URxvt.*VT100.colorBD: red
-URxvt.*VT100.colorULMode: true
-URxvt.*VT100.colorUL: cyan
-URxvt.*VT100.veryBoldColors: 6
+URxvt.letterSace:-1
 
-URxvt.*background: rgb:00/00/00
-URxvt.*foreground: rgb:00/ff/00
+!Urxvt.*VT100.colorBDMode: true
+!URxvt.*VT100.colorBD: red
+!URxvt.*VT100.colorULMode: true
+!URxvt.*VT100.colorUL: cyan
+!URxvt.*VT100.veryBoldColors: 6
+
+URxvt.*foreground: rgb:ff/ff/ff
 URxvt.scrollBar: false
 URxvt.transparent: true
-URxvt.shading:20
-!URxvt.url-launcher:        /usr/bin/chromium
+URxvt.shading:10
+URxvt*depth: 32
+URxvt*background: rgba:0000/0000/0200/c800
+URxvt.url-launcher:        /usr/bin/chromium
 !URxvt.keysym.M-Delete:     perl:matcher:list
 !URxvt.colorUL:             #7780a1

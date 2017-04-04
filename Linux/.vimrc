@@ -3,6 +3,9 @@
 "" start w/ relative line numbers
 set relativenumber
 
+let $PYTHONPATH='/usr/lib/python3.6/site-packages'
+set laststatus=2
+
 " Plugins
 " =======
 "
@@ -11,6 +14,7 @@ set relativenumber
 filetype off
 """ set the runtime path to include vundle, and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
+
 call vundle#begin()
 
 """ vundle modules to load
@@ -18,7 +22,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'mbbill/undotree'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 "Plugin 'tpope/vim-markdown'
 "Plugin 'yuratomo/w3m.vim'
 call vundle#end()
@@ -96,3 +100,4 @@ augroup Shebang
 augroup END
 
 syntax on
+color koehler
