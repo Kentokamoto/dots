@@ -10,16 +10,17 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 #startup Items
+#exec xss-lock -- i3lock -n -i /home/kokamoto/Google_Drive/Photos/'Desktop Backgrounds'/Reddit_Places.png &
 exec xrdb -merge ~/.Xresources
 exec xmodmap ~/.Xmodmap
 exec xset r rate 200 25
-exec sh ~/Documents/wallpaper.sh
+exec sh ~/.config/wallpaper.sh
 exec xset s 3000 3000
 exec xset -dpms
 exec fcitx
 
 #End Startup Items
-set $mod Mod1
+set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -162,7 +163,8 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+	#font pango:Monospace,Icons:style=Regular 8 
+	status_command i3status
 }
 
 
@@ -179,20 +181,25 @@ bindsym $mod+c exec chromium
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 
+#Audio Controls
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
 
 #Automatically toggle external screen
 bindsym Super_L exec xrandr --output HDMI1 --auto
 bindsym XF86HomePage exec xrandr --output HDMI1 --right-of eDP1
 
+
+
 #Automatically Extend external Screen
-#bindsym F11  exec xrandr --output HDMI --right-of eDP1 
-bindsym F9 exec xrandr --output HDMI --left-of eDP1 
 
 #Screen shot
-bindsym Print exec scrot -s ~/Pictures/Screenshots/%b%d_%H%M%S.png
+bindsym --release Print exec scrot ~/Pictures/Screenshots/%b%d_%H%M%S.png
+bindsym --release Shift+Print exec scrot -s ~/Pictures/Screenshots/%b%d_%H%M%S.png
 
+# Window Behaviors
+for_window [class="^URxvt$"] border pixel 1
 
 #Assign Programs to certain windows
-assign [class="^Spotify$"] 3
 assign [class="^chromium$"] 2
-assign [class="^Pavucontrol$"] 4
