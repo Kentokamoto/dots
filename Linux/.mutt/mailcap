@@ -28,9 +28,9 @@ message/rfc822;			cat; copiousoutput; edit=$VISUAL %s
 # The following Microsoft application MIME attachments are viewed from
 # the attachment menu using QuickView Plus for UNIX. 
 #
-application/msword;		mutt_bgrun qvpview %s; test=RunningX
+application/msword;		/usr/bin/libreoffice %s;mutt_bgrun qvpview %s; test=RunningX
 application/msword;		word2text %s; copiousoutput
-application/vnd.msword;		mutt_bgrun qvpview %s; test=RunningX
+application/vnd.msword;		/usr/bin/libreoffice %s;mutt_bgrun qvpview %s; test=RunningX
 application/vnd.msword;		word2text %s; copiousoutput
 #
 application/excel;		mutt_bgrun qvpview %s; test=RunningX
@@ -53,7 +53,7 @@ application/x-mspowerpoint;	ppt2text %s; copiousoutput
 application/ppt;		mutt_bgrun qvpview %s; test=RunningX
 application/ppt;		ppt2text %s; copiousoutput
 
-application/pdf;		mutt_bgrun acroread +useFrontEndProgram %s; test=RunningX
+application/pdf;		/usr/bin/zathura %s;copiousoutput
 application/pdf;		pdftotext %s -; copiousoutput
 
 application/postscript;		mutt_bgrun ghostview %s; test=RunningX

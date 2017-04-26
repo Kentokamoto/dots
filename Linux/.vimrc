@@ -49,10 +49,6 @@ filetype plugin indent on
 "" 'space + <char>' to insert character <char>
 nnoremap <Space> i_<Esc>r
 
-"" show trailing spaces as '_', tabs as '>   '
-"set list listchars=tab:>\ ,eol:Â¬,extends:Â,precedes:Â«
-"set list listchars=tab:\ \ ,trail:_,extends:Â»,precedes:Â«
-"map <leader>lc :set list!<cr>
 
 " status bar
 set laststatus=2
@@ -77,12 +73,12 @@ set shiftwidth=4
 " On pressing tab, insert 4 spaces
 "set expandtab
 
-" Omni Complete
-filetype plugin on
-set omnifunc=syntaxcomplete#Complete
 
 " Auto Completion
+" Remove the global include paths
+set complete-=i
 set completeopt=longest,menuone
+" Pressing Enter Selects the option
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
   \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
@@ -117,16 +113,16 @@ function! Smart_TabComplete()
   let has_period = match(substr, '\.') != -1      " position of period, if any
   let has_slash = match(substr, '\/') != -1       " position of slash, if any
   if (!has_period && !has_slash)
-    return "\<C-X>\<C-P>"                         " existing text matching
+    return "\<C-N>"                         	  " slight modification was : \<C-X>\<C-P>
   elseif ( has_slash )
     return "\<C-X>\<C-F>"                         " file matching
   else
     return "\<C-X>\<C-O>"                         " plugin matching
   endif
 endfunction
-inoremap <tab> <c-r>=Smart_TabComplete()<CR>
+inoremap <Tab> <C-R>=Smart_TabComplete()<CR>
 
-
+" A much simpler tab complete 
 function! Tab_Or_Complete()
   if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
     return "\<C-N>"
@@ -134,5 +130,5 @@ function! Tab_Or_Complete()
     return "\<Tab>"
   endif
 endfunction
-inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
-set dictionary="/usr/dict/words"
+"inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
+set dictionary+="/usr/share/dict/cracklib-small"

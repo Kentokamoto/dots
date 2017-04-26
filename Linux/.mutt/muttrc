@@ -1,12 +1,12 @@
 # A basic .muttrc for use with Gmail
 
 # Change the following six lines to match your Gmail account details
-set imap_user = email@domain.com
-set imap_pass = =
+set imap_user = 
+set imap_pass = 
 set smtp_url = smtp://email@domain.com@smtp.gmail.com:587/
-set smtp_pass = =
-set from = email@domain.com
-set realname = 'Name'
+set smtp_pass =
+set from =email@domain.com 
+set realname = 'Kento Okamoto'
 
 # Change the following line to a different editor you prefer.
 set editor = "vim"
@@ -17,8 +17,8 @@ set spoolfile=+INBOX
 set imap_check_subscribed
 set hostname = gmail.com
 set mail_check = 60
-set timeout = 300
-set imap_keepalive = 300
+set timeout = 30
+set imap_keepalive = 30
 set postponed = +[GMail]/Drafts
 set record = '+[GMail]/Sent Mail'
 set header_cache=~/.mutt/cache/headers
@@ -53,4 +53,10 @@ macro index,pager gd "<change-folder>=[Gmail]/Drafts<enter>" "Go to drafts"
 #Other Configs
 set signature="~/.mutt/cache/signature"
 set mailcap_path="~/.mutt/mailcap"
+
+#Vim like keybindings
+bind pager j next-line
+bind pager k previous-line
+bind pager g top
+bind pager G bottom
 #end-----------------------------------------
