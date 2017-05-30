@@ -1,0 +1,8 @@
+#!/bin/bash
+
+FORMAT="${BLOCK_INSTANCE:-%a %b %d %Y, %H:%M:%S %Z}"
+DATETIME=$(date "+${FORMAT}")
+#DATETIME=$(date)
+echo "${DATETIME}"
+echo "${DATETIME}"
+echo ""
