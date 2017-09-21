@@ -85,8 +85,11 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 # Other configs
-LS_COLORS=$LS_COLORS:'di=0;36:' ; export LS_COLORS
+LS_COLORS=$LS_COLORS:'di=0;36:'
+# ex=1;37:' ; export LS_COLORS
 
 # Aliases
-alias mines="cd /home/kokamoto/Google_Drive/Mines/Graduate/Spring\ 2017\ \(Graduate\ 4\)"
+alias mines="cd /home/kokamoto/Google_Drive/Mines/Graduate/Masters_Project/"
+alias wifireboot="systemctl restart netctl-auto@wlp58s0.service"
 
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}

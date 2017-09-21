@@ -37,36 +37,13 @@ markup=none
 label=
 instance=spotify
 interval=1
+signal=3
 
-# Part 2
-# Wireless/Networks
-[network]
-label=
-instance=wlp58s0
-interval=10
-separator=false
-
-[ssid]
-#label=
-color=#00FF00
+[weather]
+#Mountain View
+label=Mountain View, CA: 
+instance=5375480
 interval=60
-separator=false
-
-[bandwidth]
-instance=wlp58s0;in
-label=
-interval=10
-separator=false
-
-[bandwidth]
-instance=wlp58s0;out
-label=
-interval=10
-
-
-#[bluetooth]
-#label=
-#interval=10
 
 
 #[countdown]
@@ -96,7 +73,7 @@ separator=false
 label=SWP:
 #label=
 instance=swap;used
-interval=30
+interval=-1
 
 # Part 4
 # Other
@@ -104,35 +81,63 @@ interval=30
 label=
 interval=30
 
-[audio]
-label=
-interval=5
-
-[battery]
-label=
-instance=0
-interval=5
-
-[brightness]
-label=
-interval=5
-
 
 [temperature]
 instance=Core
 label=
 interval=5
 
-[weather]
-label=Golden, CO:
-instance=5423294
-#Mountain View
-#label=Mountain View, CA: 
-#instance=5375480
+#Backlight brightness
+[brightness]
+color=#FFFF00
+label=
+interval=1
+signal=2
+
+[audio]
+color=#00FFFF
+label=♪
+interval=once
+signal=1
+
+# Wireless/Networks
+[network]
+label=
+instance=wlp58s0
+interval=10
+separator=false
+
+[ssid]
+#label=
+color=#00FF00
 interval=60
+separator=false
+
+[bandwidth]
+instance=wlp58s0;in
+label=
+interval=10
+separator=false
+
+[bandwidth]
+instance=wlp58s0;out
+label=
+interval=10
+
+
+#[bluetooth]
+#label=Bluetooth
+#label=
+#interval=10
+
 
 [datetime]
 label=
+interval=1
+
+[battery]
+markup=pango
+#instance=0
 interval=1
 
 

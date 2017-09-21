@@ -1,8 +1,9 @@
 #Local Environmental Variables
-#export GTK_IM_MODULE=fcitx
-#export QT_IM_MODULE=fcitx
-#export XMODIFIERS=@im=fcitx
-#QT_QPA_PLATFORM=wayland
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+export QT_QPA_PLATFORM=wayland
+export GDK_backend=wayland
 # Window Manger Options
 # sway
 # gnome

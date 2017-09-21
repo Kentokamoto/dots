@@ -2,9 +2,14 @@
 " ======
 "" start w/ relative line numbers
 set relativenumber
-
+set number
 let $PYTHONPATH='/usr/lib/python3.6/site-packages'
 set laststatus=2
+highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
+match ExtraWhitespace /\s+$/
+set hlsearch
+set incsearch
+set autochdir
 
 " Plugins
 " =======
@@ -38,7 +43,6 @@ call vundle#end()
 "" turn filetype recognition back on
 filetype plugin indent on
 
-
 " save and load folds automatically
 "autocmd BufWinLeave *.* mkview!
 "autocmd BufWinEnter *.* silent loadview
@@ -46,24 +50,12 @@ filetype plugin indent on
 "" 'control+n' to reset highlighting (e.g. after a search or search/replace)
 "nnoremap <C-n> :nohl<CR>
 
-"" 'space + <char>' to insert character <char>
-nnoremap <Space> i_<Esc>r
-
-
 " status bar
 set laststatus=2
 let g:airline_theme='jellybeans'
 
-
-"" enable folder/project -specific vimrc
-"set exrc
-"" ... and restrict what you can do with it
-"set secure
-
-"" ycm options
-
 syntax on
-color koehler
+color elflord
 
 filetype plugin indent on
 " show existing tab with 4 spaces width
@@ -71,29 +63,8 @@ set tabstop=4
 " when indenting with '>', use 4 spaces width
 set shiftwidth=4
 " On pressing tab, insert 4 spaces
-"set expandtab
+set expandtab
 
-
-" Auto Completion
-" Remove the global include paths
-set complete-=i
-set completeopt=longest,menuone
-" Pressing Enter Selects the option
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
-  \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
-
-inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
-  \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
-
-" open omni completion menu closing previous if open and opening new menu without changing the text
-inoremap <expr> <C-Space> (pumvisible() ? (col('.') > 1 ? '<Esc>i<Right>' : '<Esc>i') : '') .
-            \ '<C-x><C-o><C-r>=pumvisible() ? "\<lt>C-n>\<lt>C-p>\<lt>Down>" : ""<CR>'
-" open user completion menu closing previous if open and opening new menu without changing the text
-inoremap <expr> <S-Space> (pumvisible() ? (col('.') > 1 ? '<Esc>i<Right>' : '<Esc>i') : '') .
-            \ '<C-x><C-u><C-r>=pumvisible() ? "\<lt>C-n>\<lt>C-p>\<lt>Down>" : ""<CR>'
-"Use TAB to complete when typing words, else inserts TABs as usual.
-"Uses dictionary and source files to find matching words to complete.
 
 "See help completion for source,
 "Note: usual completion is on <C-n> but more trouble to press all the time.
@@ -120,15 +91,5 @@ function! Smart_TabComplete()
     return "\<C-X>\<C-O>"                         " plugin matching
   endif
 endfunction
-inoremap <Tab> <C-R>=Smart_TabComplete()<CR>
+inoremap <tab> <c-r>=Smart_TabComplete()<CR>
 
-" A much simpler tab complete 
-function! Tab_Or_Complete()
-  if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
-    return "\<C-N>"
-  else
-    return "\<Tab>"
-  endif
-endfunction
-"inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
-set dictionary+="/usr/share/dict/cracklib-small"

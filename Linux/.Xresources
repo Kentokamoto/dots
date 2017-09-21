@@ -1,4 +1,6 @@
 !
+! DPI Settings
+!Xft.dpi: 220
 URxvt.termName: xterm-256color
 !URxvt ------------------------------
 !URxvt*font: xft:Terminus:pixelsize=14, \xft:Sazanami:antialias=true, \xft:Baekmuk Gulim
@@ -13,7 +15,7 @@ URxvt.termName: xterm-256color
 !URxvt.font: xft:Terminus (TTF) for Powerline:pixelsize=36
 !URxvt.font: xft:Inconsolata\-dz for Powerline:pixelsize=36
 !URxvt.font: xft:Inconsolata\-g for Powerline:pixelsize=36
-URxvt.font: xft:Liberation Mono for Powerline,Literation Mono Powerline:style=Regular
+URxvt.font: xft:Liberation Mono for Powerline,Literation Mono Powerline:style=Regular:pixelsize=30
 !URxvt.font: xft:Meslo LG L DZ for Powerline:pixelsize=36
 !URxvt.font: xft:Meslo LG L for Powerline:pixelsize=36
 !URxvt.font: xft:Meslo LG M DZ for Powerline:pixelsize=36

@@ -42,7 +42,7 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec urxvt
-
+#bindsym $mod+Return exec urxvt -e bash -c "tmux -q has-session && exec tmux attach-session -d || exec tmux new-session -n$USER -s$USER@$HOSTNAME"
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -164,32 +164,37 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
 	#font pango:Monospace,Icons:style=Regular 8 
-	status_command i3status
+	#status_command i3status
+	status_command i3blocks
 }
 
+#Borders
+#new_window pixel 3
+hide_edge_borders smart
 
-
-#Voluem Controls in i3
-bindsym XF86AudioRaiseVolume exec amixer -q set Master 2%+ unmute
-bindsym XF86AudioLowerVolume exec amixer -q set Master 2%- unmute
-bindsym XF86AudioMute exec (amixer get Master | grep off > /dev/null && amixer -q set Master unmute) || amixer -q set Master mute
+#Volume Controls in i3
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 2%+ unmute && pkill -RTMIN+1 i3blocks
+bindsym XF86AudioLowerVolume exec amixer -q set Master 2%- unmute && pkill -RTMIN+1 i3blocks
+bindsym XF86AudioMute exec (amixer get Master | grep off > /dev/null && amixer -q set Master unmute) || amixer -q set Master mute && pkill -RTMIN+1 i3blocks
 
 #Open Browser of choice
-bindsym $mod+c exec chromium
+bindsym $mod+c exec google-chrome-stable --force-device-scale-factor=2
 
 #Backlight Adjustment
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10
-bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5 -time 100 && pkill -RTMIN+2 i3blocks 
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5 -time 100 && pkill -RTMIN+2 i3blocks
 
 #Audio Controls
-bindsym XF86AudioPlay exec playerctl play-pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioPlay exec playerctl play-pause && pkill -RTMIN+3 i3blocks
+bindsym XF86AudioNext exec playerctl next && pkill -RTMIN+3 i3blocks
+bindsym XF86AudioPrev exec playerctl previous && pkill -RTMIN+3 i3blocks
 
 #Automatically toggle external screen
 bindsym Super_L exec xrandr --output HDMI1 --auto
 bindsym XF86HomePage exec xrandr --output HDMI1 --right-of eDP1
-
+bindsym F1 exec xrandr --output eDP1 --auto --output DP1 --auto --panning 3840x2160+3200+0 --scale 2x2 --left-of eDP1
+bindsym F2 exec xrandr --output DP1 --scale 1.66x1.5
+bindsym F3 exec xrandr --output eDP1 --auto --output DP1 --auto --panning 3840x2160+3200+0 --scale 2x2 --right-of eDP1
 
 
 #Automatically Extend external Screen

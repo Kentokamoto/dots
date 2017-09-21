@@ -5,8 +5,8 @@ case $WM in
 		exec gnome-session --session=gnome-classic
 		;;
 	i3)
-		xrandr --dpi 96
-		exec i3		
+		xrandr --dpi 200
+		exec i3	
 		;;
 	*)
 		export XDG_CURRENT_DESKTOP=GNOME-Classic:GNOME
