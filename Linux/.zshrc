@@ -51,7 +51,10 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git
+         archlinux
+         #vi-mode
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -87,9 +90,22 @@ source $ZSH/oh-my-zsh.sh
 # Other configs
 LS_COLORS=$LS_COLORS:'di=0;36:'
 # ex=1;37:' ; export LS_COLORS
-
+TERM=rxvt-unicode-256color
 # Aliases
 alias mines="cd /home/kokamoto/Google_Drive/Mines/Graduate/Masters_Project/"
 alias wifireboot="systemctl restart netctl-auto@wlp58s0.service"
+alias def="/usr/bin/sdcv --color"
+alias beep="ping 8.8.8.8"
+alias emacs="emacs -nw"
+#vi mode
+#bindkey -v
+#emacs mode
+bindkey -e
 
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+export KEYTIMEOUT=1
+
+HISTFILE=~/.histfile
+HISTSIZE=2000
+SAVEHIST=2000
+
