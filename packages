@@ -7,3 +7,6 @@ sway
 rtorrent
 curl
 mosh
+UBUNTU gnome-tweak-tool
+UBUNTU gnome-shell-extensions
+UBUNTU chrome-gnome-shell
