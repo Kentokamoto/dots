@@ -1,7 +1,7 @@
 vim
 emacs
 git
-spotify
+SNAP spotify
 tmux
 sway
 rtorrent
@@ -10,3 +10,6 @@ mosh
 UBUNTU gnome-tweak-tool
 UBUNTU gnome-shell-extensions
 UBUNTU chrome-gnome-shell
+nodejs
+SNAP code
+ARCH yay
