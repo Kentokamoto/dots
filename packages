@@ -13,3 +13,5 @@ UBUNTU chrome-gnome-shell
 nodejs
 SNAP code
 ARCH yay
+ARCH plex-media-server-plexpass
+UBUNTU SNAP plex-media-server
