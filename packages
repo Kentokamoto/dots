@@ -10,8 +10,14 @@ mosh
 UBUNTU gnome-tweak-tool
 UBUNTU gnome-shell-extensions
 UBUNTU chrome-gnome-shell
+UBUNTU build-essential
 nodejs
 SNAP code
 ARCH yay
 ARCH plex-media-server-plexpass
 UBUNTU SNAP plex-media-server
+htop
+texlive-latex-base
+texlive-fonts-recommended
+texlive-fonts-extra
+pandoc
