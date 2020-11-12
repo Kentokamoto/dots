@@ -21,3 +21,5 @@ texlive-latex-base
 texlive-fonts-recommended
 texlive-fonts-extra
 pandoc
+python
+gimp

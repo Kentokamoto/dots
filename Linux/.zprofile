@@ -26,3 +26,5 @@ if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
 			exec fcitx
 	esac
 fi	
+
+export PATH="$HOME/.cargo/bin:$PATH"

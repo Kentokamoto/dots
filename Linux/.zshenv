@@ -10,7 +10,7 @@ export GDK_backend=wayland
 # i3
 # kde
 export WM=sway
-export PATH=$PATH:/home/kokamoto/Documents/Fuchsia/fuchsia/.jiri_root/bin:$HOME/go/bin
+export PATH=$PATH:/home/kokamoto/Documents/Fuchsia/fuchsia/.jiri_root/bin:$HOME/go/bin:$HOME/.local/bin
 
 export SWAY_CURSOR_THEME=Adwaita
 
