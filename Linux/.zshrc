@@ -47,6 +47,8 @@ ZSH_THEME="agnoster"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+# Skip verification
+ZSH_DISABLE_COMPFIX="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -90,7 +92,7 @@ fi
 # Other configs
 LS_COLORS=$LS_COLORS:'di=0;36:'
 # ex=1;37:' ; export LS_COLORS
-TERM=rxvt-unicode-256color
+#TERM=rxvt-unicode-256color
 # Aliases
 alias mines="cd /home/kokamoto/Google_Drive/Mines/Graduate/Masters_Project/"
 alias wifireboot="systemctl restart netctl-auto@wlp58s0.service"
@@ -108,4 +110,4 @@ export KEYTIMEOUT=1
 HISTFILE=~/.histfile
 HISTSIZE=2000
 SAVEHIST=2000
-
+IGNOREEOF=10
