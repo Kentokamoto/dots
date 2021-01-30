@@ -68,3 +68,13 @@ set expandtab
 " Split section
 set splitright
 set splitbelow
+
+au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+set cursorline
+hi CursorLine cterm=bold term=bold guibg=Grey40
+" Uncomment the following to have Vim jump to the last position when
+" reopening a file
+if has("autocmd")
+    au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+    \| exe "normal! g'\"" | endif
+endif

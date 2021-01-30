@@ -10,10 +10,13 @@ export GDK_backend=wayland
 # i3
 # kde
 export WM=sway
-export PATH=$PATH:/home/kokamoto/Documents/Fuchsia/fuchsia/.jiri_root/bin
+export PATH=$PATH:/usr/local/sbin
 export PATH=$PATH:/usr/local/bin
-export PATH=$PATH:$HOME/go/bin:$HOME/.local/bin
 export PATH=$PATH:$HOME/Library/Python/3.8/bin
+export PATH=$PATH:$HOME/go/bin:$HOME/.local/bin
+export PATH=$PATH:$HOME/Documents/Projects/fuchsia/.jiri_root/bin
+export PATH=$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin
 export SWAY_CURSOR_THEME=Adwaita
 
 export QT_SELECT=5
+source "$HOME/.cargo/env"
