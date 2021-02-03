@@ -20,3 +20,4 @@ export SWAY_CURSOR_THEME=Adwaita
 
 export QT_SELECT=5
 source "$HOME/.cargo/env"
+eval $(/opt/homebrew/bin/brew shellenv)
