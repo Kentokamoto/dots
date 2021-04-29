@@ -100,6 +100,7 @@ alias wifireboot="systemctl restart netctl-auto@wlp58s0.service"
 alias def="/usr/bin/sdcv --color"
 alias beep="ping 8.8.8.8"
 alias emacs="emacs -nw"
+alias iftop="sudo iftop -i en0"
 #vi mode
 #bindkey -v
 #emacs mode

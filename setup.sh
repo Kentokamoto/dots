@@ -30,8 +30,3 @@ python get-pip.py
 rm get-pip.py
 
 
-
-defaults write -g ApplePressAndHoldEnabled -bool false
-# If VS Code is installed
-defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
-
