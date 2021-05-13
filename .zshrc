@@ -57,7 +57,7 @@ plugins=(git
          archlinux
          #vi-mode
 )
-
+eval $(/opt/homebrew/bin/brew shellenv)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
