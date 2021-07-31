@@ -22,3 +22,4 @@ ALL texlive-fonts-extra
 ALL pandoc
 ALL python
 ALL gimp
+ALL wget

@@ -13,7 +13,7 @@ SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 
 #Functions
 useHomebrew () {
-    echo -e "brew install "$1""
+    brew install $1
 }
 
 useLinux () {
@@ -52,7 +52,7 @@ if [ "$OSTYPE" == "Darwin" ]; then
         xcode-select --install 
     fi
     echo -e "${GREEN}Installing Homebrew${NC}"
-    curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
 echo -e "${GREEN}Setting up SSH Key${NC}"
@@ -105,8 +105,15 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 #Install Pip
 echo -e "${GREEN}Install Pip${NC}"
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-python get-pip.py
+python3 get-pip.py
 rm get-pip.py
+
+# Install Oh-My-ZSH
+echo -e "${GREEN}Installing Oh-My-ZSH${NC}"
+sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+
+# Install Tmux Plugin Manager
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # Linking Dot Files
 echo -e "${GREEN}Linking Dot Files${NC}"

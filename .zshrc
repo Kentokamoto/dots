@@ -55,10 +55,14 @@ ZSH_DISABLE_COMPFIX="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git
-         archlinux
+         #archlinux
          #vi-mode
 )
-eval $(/opt/homebrew/bin/brew shellenv)
+if [[ $(arch) == "arm64" ]]; then
+    eval $(/opt/homebrew/bin/brew shellenv)
+else
+    eval $(/usr/local/Homebrew/bin/brew shellenv)
+fi
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
