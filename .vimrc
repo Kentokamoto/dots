@@ -3,7 +3,7 @@
 "" start w/ relative line numbers
 set relativenumber
 set number
-let $PYTHONPATH='/usr/lib/python3.6/site-packages'
+"let $PYTHONPATH='/usr/lib/python3.6/site-packages'
 set laststatus=2
 highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 match ExtraWhitespace /\s+$/
