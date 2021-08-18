@@ -58,10 +58,10 @@ fi
 echo -e "${GREEN}Setting up SSH Key${NC}"
 if [ "$SSH_ENCRYPTION" == "EDDSA" ]; then
     echo -e "${GREEN}Using EDDSA${NC}"
-    ssh-keygen -t ed25519 -C "$USER@$HOSTNAME"
+    ssh-keygen -t ed25519 -C "$USER@$HOST"
 else
     echo -e "${GREEN}Usint RSA 4096${NC}"
-    ssh-keygen -t rsa -b 4096 -C "$USER@$HOSTNAME"
+    ssh-keygen -t rsa -b 4096 -C "$USER@$HOST"
 fi
 
 
