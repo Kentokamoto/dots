@@ -30,6 +30,7 @@ Plugin 'vim-airline/vim-airline-themes'
 "Plugin 'vim-scripts/AutoComplPop'
 "Plugin 'Valloric/YouCompleteMe'
 Plugin 'tpope/vim-markdown'
+Plugin 'luochen1990/rainbow'
 "Plugin 'yuratomo/w3m.vim'
 call vundle#end()
 "
@@ -53,6 +54,7 @@ filetype plugin indent on
 " status bar
 set laststatus=2
 let g:airline_theme='jellybeans'
+let g:rainbow_active = 1
 
 syntax on
 color elflord
@@ -78,7 +80,6 @@ if has("autocmd")
     au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal! g'\"" | endif
 endif
-
 
 " Some odd backspace thing?
 set backspace=indent,eol,start

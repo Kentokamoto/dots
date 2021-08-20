@@ -7,7 +7,7 @@ RED='\033[0;31m'
 NC='\033[0m' # No Color
 
 OSTYPE=$(uname)
-SSH_ENCRYPTION="ECDSA"
+SSH_ENCRYPTION="EDDSA"
 RTORRENT_INSTALL=0
 SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 
@@ -56,12 +56,12 @@ if [ "$OSTYPE" == "Darwin" ]; then
 fi
 
 echo -e "${GREEN}Setting up SSH Key${NC}"
-if [ "$SSH_ENCRYPTION" == "ECDSA" ]; then
-    echo -e "${GREEN}Using ECDSA${NC}"
-    ssh-keygen -t ecdsa -b 521 -C "$USER@HOSTNAME"
+if [ "$SSH_ENCRYPTION" == "EDDSA" ]; then
+    echo -e "${GREEN}Using EDDSA${NC}"
+    ssh-keygen -t ed25519 -C "$USER@$HOST"
 else
     echo -e "${GREEN}Usint RSA 4096${NC}"
-    ssh-keygen -t rsa -b 4096 -C "$USER@$HOSTNAME"
+    ssh-keygen -t rsa -b 4096 -C "$USER@$HOST"
 fi
 
 
