@@ -13,10 +13,6 @@ export QT_SELECT=5
 export WM=sway
 export SWAY_CURSOR_THEME=Adwaita
 
-if [[ $(command -v brew &>/dev/null) -eq 0 ]]; then
-    eval $(brew shellenv)
-fi
-
 #if [[ ($(arch) == "arm64") ]]; then
 #    eval $(/opt/homebrew/bin/brew shellenv)
 #else
@@ -31,6 +27,10 @@ fi
 export PATH=$PATH:$HOME/.local/bin
 if [[ -d "/Applications/Visual\ Studio\ Code.app/" ]]; then
     export PATH=$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin
+fi
+
+if [[ $(command -v brew &>/dev/null) -eq 0 ]]; then
+    eval $(brew shellenv)
 fi
 
 # Guile

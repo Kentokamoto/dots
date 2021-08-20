@@ -31,6 +31,7 @@ Plugin 'vim-airline/vim-airline-themes'
 "Plugin 'Valloric/YouCompleteMe'
 Plugin 'tpope/vim-markdown'
 Plugin 'luochen1990/rainbow'
+Plugin 'preservim/nerdtree'
 "Plugin 'yuratomo/w3m.vim'
 call vundle#end()
 "
@@ -83,3 +84,10 @@ endif
 
 " Some odd backspace thing?
 set backspace=indent,eol,start
+
+" VUNDLE PLUGIN SETTINGS
+" NERDTree
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>

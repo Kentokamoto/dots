@@ -113,3 +113,8 @@ HISTFILE=~/.histfile
 HISTSIZE=2000
 SAVEHIST=2000
 IGNOREEOF=10
+
+# Work Related Things
+if [[ -d "$HOME/.work/" ]]; then
+    eval $(cat $HOME/.work/setenv)
+fi
