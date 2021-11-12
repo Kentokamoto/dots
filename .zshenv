@@ -13,11 +13,9 @@ export QT_SELECT=5
 export WM=sway
 export SWAY_CURSOR_THEME=Adwaita
 
-#if [[ ($(arch) == "arm64") ]]; then
-#    eval $(/opt/homebrew/bin/brew shellenv)
-#else
-#    eval $(/usr/local/Homebrew/bin/brew shellenv)
-#fi
+if [[ ($(arch) == "arm64") ]]; then
+    eval $(/opt/homebrew/bin/brew shellenv)
+fi
 
 # PATH extentions
 export PATH=$PATH:/usr/local/bin
@@ -40,25 +38,8 @@ eval "$(pyenv virtualenv-init -)"
 export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib"
 export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include"
 
-# Guile
-export GUILE_LOAD_PATH="/opt/homebrew/share/guile/site/3.0"
-export GUILE_LOAD_COMPILED_PATH="/opt/homebrew/lib/guile/3.0/site-ccache"
-export GUILE_SYSTEM_EXTENSIONS_PATH="/opt/homebrew/lib/guile/3.0/extensions"
-# If you are going to use the Guile bindings you will need to add the following
-# to your .bashrc or equivalent in order for Guile to find the TLS certificates
-# database:
-export GUILE_TLS_CERTIFICATE_DIRECTORY=/usr/local/etc/gnutls/
-
 # Compiler Flags
 export CPATH=/opt/homebrew/include
 export LIBRARY_PATH=/opt/homebrew/lib
 
 source "$HOME/.cargo/env"
-
-if [[ $(uname -s) -eq "Darwin" ]];then
-    #echo "macOS"
-
-else
-
-fi
-
