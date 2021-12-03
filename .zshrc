@@ -1,6 +1,22 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# The following lines were added by compinstall
+zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
+zstyle ':completion:*' list-colors ''
+zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '' 'l:|=* r:|=*'
+zstyle ':completion:*' menu select=0
+zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
+zstyle ':completion:*' use-compctl true
+zstyle :compinstall filename '/Users/kentokamoto/.zshrc'
+
+fpath+=~/.zsh/completion
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+# Auto Completion Path
+
 # Path to your oh-my-zsh installation.
   export ZSH=$HOME/.oh-my-zsh
 
@@ -131,3 +147,5 @@ export PATH="/usr/local/bin:$PATH"
 #eval "$(pyenv virtualenv-init -)"
 export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib"
 export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include"
+
+
