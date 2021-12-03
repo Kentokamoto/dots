@@ -57,6 +57,8 @@ ZSH_DISABLE_COMPFIX="true"
 plugins=(git
          #archlinux
          #vi-mode
+         #docker
+         #docker-compose
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -118,3 +120,5 @@ IGNOREEOF=10
 if [[ -d "$HOME/.work/" ]]; then
     eval $(cat $HOME/.work/setenv)
 fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -27,15 +27,6 @@ if [[ -d "/Applications/Visual\ Studio\ Code.app/" ]]; then
     export PATH=$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin
 fi
 
-# Guile
-export GUILE_LOAD_PATH="/opt/homebrew/share/guile/site/3.0"
-export GUILE_LOAD_COMPILED_PATH="/opt/homebrew/lib/guile/3.0/site-ccache"
-export GUILE_SYSTEM_EXTENSIONS_PATH="/opt/homebrew/lib/guile/3.0/extensions"
-# If you are going to use the Guile bindings you will need to add the following
-# to your .bashrc or equivalent in order for Guile to find the TLS certificates
-# database:
-export GUILE_TLS_CERTIFICATE_DIRECTORY=/usr/local/etc/gnutls/
-
 # Compiler Flags
 export CPATH=/opt/homebrew/include
 export LIBRARY_PATH=/opt/homebrew/lib
