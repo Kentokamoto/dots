@@ -43,3 +43,4 @@ export CPATH=/opt/homebrew/include
 export LIBRARY_PATH=/opt/homebrew/lib
 
 source "$HOME/.cargo/env"
+. "$HOME/.cargo/env"
