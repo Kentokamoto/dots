@@ -1,24 +1,12 @@
-" General
-" ======
-"" start w/ relative line numbers
-set relativenumber
-set number
-"let $PYTHONPATH='/usr/lib/python3.6/site-packages'
-set laststatus=2
-highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
-match ExtraWhitespace /\s+$/
-set hlsearch
-set incsearch
-set autochdir
-
 " Plugins
-" =======
+" ====================================================
 "
 " vundle
 ""filetype must be turned off before vundle commands
 filetype off
 """ set the runtime path to include vundle, and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=/usr/local/opt/fzf
 
 call vundle#begin()
 
@@ -52,6 +40,22 @@ filetype plugin indent on
 "" 'control+n' to reset highlighting (e.g. after a search or search/replace)
 "nnoremap <C-n> :nohl<CR>
 
+" General
+" ===================================================
+"" start w/ relative line numbers
+set relativenumber
+set number
+"let $PYTHONPATH='/usr/lib/python3.6/site-packages'
+set laststatus=2
+highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
+match ExtraWhitespace /\s\+$/
+set hlsearch
+set incsearch
+set autochdir
+
+" Look for tags file
+set tags=tags;/
+
 " status bar
 set laststatus=2
 let g:airline_theme='jellybeans'
@@ -72,7 +76,8 @@ set expandtab
 set splitright
 set splitbelow
 
-au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+" Highlight characters in red if the 80 char limit has been reached
+" au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 set cursorline
 hi CursorLine cterm=bold term=bold guibg=Grey40
 " Uncomment the following to have Vim jump to the last position when
@@ -84,10 +89,20 @@ endif
 
 " Some odd backspace thing?
 set backspace=indent,eol,start
+" Fuzzy Find
+nnoremap <C-f> :FZF
 
 " VUNDLE PLUGIN SETTINGS
 " NERDTree
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
+
+" GLOBAL GNU TAGS SETTINGS
+let GtagsCscope_Auto_Map = 1
+let GtagsCscope_Auto_Load = 1
+let GtagsCscope_Absolute_Path = 1
+
+" Folding
+nnoremap <space> za
+set foldlevelstart=99

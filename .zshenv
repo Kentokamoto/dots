@@ -27,16 +27,19 @@ if [[ -d "/Applications/Visual\ Studio\ Code.app/" ]]; then
     export PATH=$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin
 fi
 
+if [[ $(command -v brew &>/dev/null) -eq 0 ]]; then
+    eval $(brew shellenv)
+fi
+
+export PATH="$HOME/.pyenv/bin:$PATH"
+
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib"
+export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include"
+
 # Compiler Flags
 export CPATH=/opt/homebrew/include
 export LIBRARY_PATH=/opt/homebrew/lib
 
 source "$HOME/.cargo/env"
-
-if [[ $(uname -s) -eq "Darwin" ]];then
-    #echo "macOS"
-
-else
-
-fi
-
