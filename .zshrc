@@ -59,6 +59,8 @@ plugins=(git
          docker-compose
          #archlinux
          #vi-mode
+         #docker
+         #docker-compose
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -122,7 +124,6 @@ if [[ -d "$HOME/.work/" ]]; then
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 
 eval "$(pyenv init -)"
 eval "$(pyenv init --path)"
