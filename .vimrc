@@ -10,9 +10,9 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'vim-syntastic/syntastic'
+Plug 'ycm-core/YouCompleteMe'
 "Plugin 'mbbill/undotree'
 "Plugin 'vim-scripts/AutoComplPop'
-"Plugin 'Valloric/YouCompleteMe'
 "Plugin 'tpope/vim-markdown'
 "Plugin 'yuratomo/w3m.vim'
 

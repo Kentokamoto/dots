@@ -24,3 +24,5 @@ ALL python
 ALL gimp
 ALL wget
 ALL fzf
+ALL pyenv
+ALL pyenv-virtualenv

@@ -135,17 +135,27 @@ SAVEHIST=2000
 IGNOREEOF=10
 
 # Work Related Things
+if [[ -d "$HOME/go/" ]]; then
+    export PATH=$PATH:/usr/local/go/bin
+fi
+export PATH=$PATH:$HOME/.local/bin
+if [[ -d "/Applications/Visual\ Studio\ Code.app/" ]]; then
+    export PATH=$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin
+fi
+
+if [[ ($(arch) == "arm64") ]]; then
+    eval $(/opt/homebrew/bin/brew shellenv)
+fi
+
+if [[ $(command -v brew &>/dev/null) -eq 0 ]]; then
+    eval $(brew shellenv)
+fi
+
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 if [[ -d "$HOME/.work/" ]]; then
     . $HOME/.work/setenv.sh
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-eval "$(pyenv init -)"
-eval "$(pyenv init --path)"
-export PATH="/usr/local/bin:$PATH"
-#eval "$(pyenv virtualenv-init -)"
-export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib"
-export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include"
-
-
