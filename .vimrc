@@ -10,7 +10,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'vim-syntastic/syntastic'
-Plug 'ycm-core/YouCompleteMe'
+"Plug 'ycm-core/YouCompleteMe'
 "Plugin 'mbbill/undotree'
 "Plugin 'vim-scripts/AutoComplPop'
 "Plugin 'tpope/vim-markdown'
@@ -35,11 +35,12 @@ set tags=tags;/
 
 " status bar
 set laststatus=2
-let g:airline_theme='jellybeans'
+"let g:airline_theme='jellybeans'
 let g:rainbow_active = 1
-
+let g:solarized_termcolors=256
 syntax on
-color elflord
+set background=dark
+color solarized
 
 filetype plugin indent on
 " show existing tab with 4 spaces width
@@ -56,7 +57,7 @@ set splitbelow
 " Highlight characters in red if the 80 char limit has been reached
 " au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 set cursorline
-hi CursorLine cterm=bold term=bold guibg=Grey40
+hi CursorLine cterm=bold term=bold ctermbg=none
 " Uncomment the following to have Vim jump to the last position when
 " reopening a file
 if has("autocmd")
