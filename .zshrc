@@ -115,8 +115,6 @@ LS_COLORS=$LS_COLORS:'di=0;36:'
 # ex=1;37:' ; export LS_COLORS
 #TERM=rxvt-unicode-256color
 # Aliases
-alias mines="cd /home/kokamoto/Google_Drive/Mines/Graduate/Masters_Project/"
-alias wifireboot="systemctl restart netctl-auto@wlp58s0.service"
 alias def="/usr/bin/sdcv --color"
 alias beep="ping 8.8.8.8"
 alias emacs="emacs -nw"
@@ -151,11 +149,13 @@ if [[ $(command -v brew &>/dev/null) -eq 0 ]]; then
     eval $(brew shellenv)
 fi
 
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
 export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 if [[ -d "$HOME/.work/" ]]; then
-    . $HOME/.work/setenv.sh
+    eval $(cat $HOME/.work/setenv.sh)
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
