@@ -139,4 +139,3 @@ autocmd BufWritePre *.h,*.cc,*.cpp call ClangFormatonsave()
 map <C-K> :py3f /usr/local/opt/llvm/share/clang/clang-format.py<cr>
 imap <C-K> <c-o>:py3f /usr/local/opt/llvm/share/clang/clang-format.py<cr>
 autocmd BufNewFile,BufRead *.cpp set formatprg=clang-format
->>>>>>> 0641f876c03705767ac308312b1d07415cc49184
