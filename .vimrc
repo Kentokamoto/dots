@@ -11,7 +11,14 @@ Plug 'mattn/vim-lsp-settings'
 Plug 'vim-syntastic/syntastic'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'arcticicestudio/nord-vim'
-Plug 'dracula/vim', { 'as': 'dracula' }
+"Plug 'prabirshrestha/vim-lsp'
+"Plug 'vim-syntastic/syntastic'
+"Plug 'ycm-core/YouCompleteMe'
+"Plug 'CoatiSoftware/vim-sourcetrail'
+"Plugin 'mbbill/undotree'
+"Plugin 'vim-scripts/AutoComplPop'
+"Plugin 'tpope/vim-markdown'
+"Plugin 'yuratomo/w3m.vim'
 
 " Initialize plugin system
 call plug#end()
@@ -33,6 +40,7 @@ set tags=tags;/
 " status bar
 set laststatus=2
 let g:rainbow_active = 1
+let g:solarized_termcolors=256
 
 " Coloring
 syntax on
@@ -122,3 +130,13 @@ augroup END
 " You Complete Me
 let g:ycm_register_as_syntastic_checker = 1
 
+" Clang-format
+function! ClangFormatonsave()
+    let l:formatdiff = 1
+    py3f /usr/local/Cellar/llvm/13.0.1_1/share/clang/clang-format.py
+endfunction
+autocmd BufWritePre *.h,*.cc,*.cpp call ClangFormatonsave()
+map <C-K> :py3f /usr/local/opt/llvm/share/clang/clang-format.py<cr>
+imap <C-K> <c-o>:py3f /usr/local/opt/llvm/share/clang/clang-format.py<cr>
+autocmd BufNewFile,BufRead *.cpp set formatprg=clang-format
+>>>>>>> 0641f876c03705767ac308312b1d07415cc49184

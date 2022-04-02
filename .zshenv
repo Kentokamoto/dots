@@ -13,10 +13,6 @@ export QT_SELECT=5
 export WM=sway
 export SWAY_CURSOR_THEME=Adwaita
 
-# PATH extentions
-export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib"
-export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include"
-
 # Compiler Flags
 export CPATH=/opt/homebrew/include
 export LIBRARY_PATH=/opt/homebrew/lib
