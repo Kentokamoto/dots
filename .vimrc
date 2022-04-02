@@ -3,18 +3,15 @@
 " Vim-Plug
 call plug#begin('~/.vim/plugged')
 
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'luochen1990/rainbow'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
 Plug 'vim-syntastic/syntastic'
 Plug 'ycm-core/YouCompleteMe'
-"Plugin 'mbbill/undotree'
-"Plugin 'vim-scripts/AutoComplPop'
-"Plugin 'tpope/vim-markdown'
-"Plugin 'yuratomo/w3m.vim'
+Plug 'arcticicestudio/nord-vim'
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 " Initialize plugin system
 call plug#end()
@@ -24,22 +21,25 @@ call plug#end()
 "" start w/ relative line numbers
 set relativenumber
 set number
+
 "let $PYTHONPATH='/usr/lib/python3.6/site-packages'
 set laststatus=2
 set hlsearch
 set incsearch
 set autochdir
-
 " Look for tags file
 set tags=tags;/
 
 " status bar
 set laststatus=2
-let g:airline_theme='jellybeans'
 let g:rainbow_active = 1
 
+" Coloring
 syntax on
-color elflord
+set background=dark
+colorscheme nord
+
+set termguicolors
 
 filetype plugin indent on
 " show existing tab with 4 spaces width
@@ -56,7 +56,7 @@ set splitbelow
 " Highlight characters in red if the 80 char limit has been reached
 " au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 set cursorline
-hi CursorLine cterm=bold term=bold guibg=Grey40
+hi CursorLine cterm=bold term=bold guibg=#2E3440
 " Uncomment the following to have Vim jump to the last position when
 " reopening a file
 if has("autocmd")
@@ -118,4 +118,7 @@ augroup lsp_install
     " call s:on_lsp_buffer_enabled only for languages that has the server registered.
     autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 augroup END
+
+" You Complete Me
+let g:ycm_register_as_syntastic_checker = 1
 
