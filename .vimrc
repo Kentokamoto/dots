@@ -101,6 +101,14 @@ set hidden
 "         \ })
 " endif
 " 
+" if executable('clangd')
+"     au User lsp_setup call lsp#register_server({
+"         \ 'name': 'clangd',
+"         \ 'cmd': {server_info->['clangd', '-background-index']},
+"         \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
+"         \ })
+" endif
+" 
 " function! s:on_lsp_buffer_enabled() abort
 "     setlocal omnifunc=lsp#complete
 "     setlocal signcolumn=yes
@@ -138,6 +146,15 @@ set hidden
 "     let l:formatdiff = 1
 "     py3f /usr/local/Cellar/llvm/13.0.1_1/share/clang/clang-format.py
 " endfunction
+
+" You Complete Me
+let g:ycm_register_as_syntastic_checker = 1
+
+" Clang-format
+function! ClangFormatonsave()
+    let l:formatdiff = 1
+    py3f /usr/local/Cellar/llvm/13.0.1_1/share/clang/clang-format.py
+endfunction
 autocmd BufWritePre *.h,*.cc,*.cpp call ClangFormatonsave()
 map <C-K> :py3f /usr/local/opt/llvm/share/clang/clang-format.py<cr>
 imap <C-K> <c-o>:py3f /usr/local/opt/llvm/share/clang/clang-format.py<cr>
