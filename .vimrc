@@ -100,7 +100,8 @@ cnoremap w!! execute 'silent! write !sudo tee % > /dev/null' <bar> edit!
 
 if s:lsp_impl == "vim-lsp"
     " VIM-LSP
-    let g:asyncomplete_auto_popup = 0
+    let g:asyncomplete_auto_popup = 1
+    let g:lsp_diagnostics_float_cursor = 1
 
     function! s:check_back_space() abort
         let col = col('.') - 1
