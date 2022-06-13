@@ -17,4 +17,6 @@ export SWAY_CURSOR_THEME=Adwaita
 export CPATH=/opt/homebrew/include
 export LIBRARY_PATH=/opt/homebrew/lib
 
+# Other Env Variables
+export PAGER="less -S"
 source "$HOME/.cargo/env"

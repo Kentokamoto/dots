@@ -83,7 +83,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 # Prompt settings
-# export MANPATH="/usr/local/man:$MANPATH"
+export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -136,7 +136,6 @@ IGNOREEOF=10
 if [[ -d "$HOME/go/" ]]; then
     export PATH=$PATH:/usr/local/go/bin
 fi
-export PATH=$PATH:$HOME/.local/bin
 if [[ -d "/Applications/Visual\ Studio\ Code.app/" ]]; then
     export PATH=$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin
 fi
@@ -152,6 +151,7 @@ fi
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
 export PATH="$HOME/.pyenv/bin:$PATH"
+export PATH=$HOME/.local/bin:$PATH
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 if [[ -d "$HOME/.work/" ]]; then
