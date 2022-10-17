@@ -18,5 +18,9 @@ export CPATH=/opt/homebrew/include
 export LIBRARY_PATH=/opt/homebrew/lib
 
 # Other Env Variables
-export PAGER="less -S"
+export PAGER="less -S -X"
 source "$HOME/.cargo/env"
+
+# Java
+export JAVA_HOME='/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home'
+export PATH=$JAVA_HOME/bin:$PATH 

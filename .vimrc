@@ -18,13 +18,22 @@ if s:lsp_impl == "vim-lsp"
 elseif s:lsp_impl == "coc"
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 endif
+Plug 'vim-airline/vim-airline'
 Plug 'arcticicestudio/nord-vim'
 Plug 'vim-syntastic/syntastic'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
+Plug 'wellle/context.vim'
 Plug 'psf/black', { 'branch': 'stable' }
+
+" Markdown
+Plug 'godlygeek/tabular'
+Plug 'preservim/vim-markdown'
+Plug 'dhruvasagar/vim-table-mode'
 "Plug 'ycm-core/YouCompleteMe'
 
+" Programming Languages
+Plug 'rust-lang/rust.vim'
 " Initialize plugin system
 call plug#end()
 
@@ -35,7 +44,6 @@ set relativenumber
 set number
 
 "let $PYTHONPATH='/usr/lib/python3.6/site-packages'
-set laststatus=2
 set hlsearch
 set incsearch
 set autochdir
@@ -43,6 +51,7 @@ set autochdir
 set tags=tags;/
 
 " status bar
+set statusline+=%F
 set laststatus=2
 let g:rainbow_active = 1
 let g:solarized_termcolors=256
@@ -97,10 +106,9 @@ set foldlevelstart=99
 " Force Write
 cnoremap w!! execute 'silent! write !sudo tee % > /dev/null' <bar> edit!
 
-
 if s:lsp_impl == "vim-lsp"
     " VIM-LSP
-    let g:asyncomplete_auto_popup = 1
+    let g:asyncomplete_auto_popup = 0
     let g:lsp_diagnostics_float_cursor = 1
 
     function! s:check_back_space() abort
@@ -113,6 +121,18 @@ if s:lsp_impl == "vim-lsp"
                 \ <SID>check_back_space() ? "\<TAB>" :
                 \ asyncomplete#force_refresh()
     inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+    nmap <buffer> gd <plug>(lsp-definition)
+    nmap <buffer> gs <plug>(lsp-document-symbol-search)
+    nmap <buffer> gS <plug>(lsp-workspace-symbol-search)
+    nmap <buffer> gr <plug>(lsp-references)
+    nmap <buffer> gi <plug>(lsp-implementation)
+    " nmap <buffer> gt <plug>(lsp-type-definition)
+    nmap <buffer> <leader>rn <plug>(lsp-rename)
+    nmap <buffer> [g <plug>(lsp-previous-diagnostic)
+    nmap <buffer> ]g <plug>(lsp-next-diagnostic)
+    nmap <buffer> K <plug>(lsp-hover)
+    " nnoremap <buffer> <expr><c-f> lsp#scroll(+4)
+    " nnoremap <buffer> <expr><c-d> lsp#scroll(-4)
 elseif s:lsp_impl == "coc"
     " Conquorer of Completion
     set hidden
@@ -129,12 +149,4 @@ endif
 " You Complete Me
 let g:ycm_register_as_syntastic_checker = 1
 
-" Clang-format
-function! ClangFormatonsave()
-    let l:formatdiff = 1
-    py3f /usr/local/Cellar/llvm/13.0.1_1/share/clang/clang-format.py
-endfunction
-autocmd BufWritePre *.h,*.cc,*.cpp call ClangFormatonsave()
-map <C-K> :py3f /usr/local/opt/llvm/share/clang/clang-format.py<cr>
-imap <C-K> <c-o>:py3f /usr/local/opt/llvm/share/clang/clang-format.py<cr>
-autocmd BufNewFile,BufRead *.cpp set formatprg=clang-format
+
