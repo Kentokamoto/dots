@@ -74,15 +74,75 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  LuaSnip = {
+    loaded = true,
+    path = "/Users/kentokamoto/.local/share/nvim/site/pack/packer/start/LuaSnip",
+    url = "https://github.com/L3MON4D3/LuaSnip"
+  },
+  ["friendly-snippets"] = {
+    loaded = true,
+    path = "/Users/kentokamoto/.local/share/nvim/site/pack/packer/start/friendly-snippets",
+    url = "https://github.com/rafamadriz/friendly-snippets"
+  },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/Users/kentokamoto/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
   ["nord.nvim"] = {
     loaded = true,
     path = "/Users/kentokamoto/.local/share/nvim/site/pack/packer/start/nord.nvim",
     url = "https://github.com/shaunsingh/nord.nvim"
   },
+  ["nvim-buffer"] = {
+    loaded = true,
+    path = "/Users/kentokamoto/.local/share/nvim/site/pack/packer/start/nvim-buffer",
+    url = "https://github.com/hrsh7th/nvim-buffer"
+  },
+  ["nvim-cmdline"] = {
+    loaded = true,
+    path = "/Users/kentokamoto/.local/share/nvim/site/pack/packer/start/nvim-cmdline",
+    url = "https://github.com/hrsh7th/nvim-cmdline"
+  },
+  ["nvim-cmp"] = {
+    loaded = true,
+    path = "/Users/kentokamoto/.local/share/nvim/site/pack/packer/start/nvim-cmp",
+    url = "https://github.com/hrsh7th/nvim-cmp"
+  },
+  ["nvim-path"] = {
+    loaded = true,
+    path = "/Users/kentokamoto/.local/share/nvim/site/pack/packer/start/nvim-path",
+    url = "https://github.com/hrsh7th/nvim-path"
+  },
+  ["nvim-tree.lua"] = {
+    loaded = true,
+    path = "/Users/kentokamoto/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
+    url = "https://github.com/nvim-tree/nvim-tree.lua"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/Users/kentokamoto/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
+  },
+  ["plenary.nvim"] = {
+    loaded = true,
+    path = "/Users/kentokamoto/.local/share/nvim/site/pack/packer/start/plenary.nvim",
+    url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  ["telescope-fzf-native.nvim"] = {
+    loaded = true,
+    path = "/Users/kentokamoto/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",
+    url = "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
+  },
+  ["telescope.nvim"] = {
+    loaded = true,
+    path = "/Users/kentokamoto/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+    url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["vim-tmux-navigator"] = {
+    loaded = true,
+    path = "/Users/kentokamoto/.local/share/nvim/site/pack/packer/start/vim-tmux-navigator",
+    url = "https://github.com/christoomey/vim-tmux-navigator"
   }
 }
 

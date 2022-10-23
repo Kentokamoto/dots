@@ -32,3 +32,6 @@ opt.clipboard:append("unnamedplus")
 -- Window Splits
 opt.splitright = true
 opt.splitbelow = true
+
+-- Mouse support
+opt.mouse = "v" -- Visual mode only

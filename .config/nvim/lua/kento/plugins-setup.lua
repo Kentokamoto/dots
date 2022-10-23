@@ -1,32 +1,49 @@
 --- Install Packer if not yet installed
 local ensure_packer = function()
-  local fn = vim.fn
-  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-  if fn.empty(fn.glob(install_path)) > 0 then
-    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
-    vim.cmd [[packadd packer.nvim]]
-    return true
-  end
-  return false
+    local fn = vim.fn
+    local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+    if fn.empty(fn.glob(install_path)) > 0 then
+        fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+        vim.cmd [[packadd packer.nvim]]
+        return true
+    end
+    return false
 end
 
 local packer_bootstrap = ensure_packer()
 
 --- Autocommand that reloads neovim whenever you save this file.
 vim.cmd([[
-  augroup packer_user_config
+    augroup packer_user_config
     autocmd!
     autocmd BufWritePost plugins-setup.lua source <afile> | PackerCompile
-  augroup end
+    augroup end
 ]])
 
 return require('packer').startup(function(use)
-  use 'wbthomason/packer.nvim'
-  use 'shaunsingh/nord.nvim'
-
-  -- Automatically set up your configuration after cloning packer.nvim
-  -- Put this at the end after all plugins
-  if packer_bootstrap then
-    require('packer').sync()
-  end
+    use 'wbthomason/packer.nvim'
+    use 'shaunsingh/nord.nvim'
+    use 'christoomey/vim-tmux-navigator'
+    -- File Explorer
+    use 'nvim-tree/nvim-tree.lua'
+    -- Statusline
+    use 'nvim-lualine/lualine.nvim'
+    -- Fuzzy Finding
+    use "nvim-lua/plenary.nvim"
+    use {'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
+    use {'nvim-telescope/telescope.nvim', tag = '0.1.0'}
+    -- CMP Plugins
+    use "hrsh7th/nvim-cmp" -- Completion plugin
+    use "hrsh7th/nvim-buffer" -- Buffer Completion
+    use "hrsh7th/nvim-path" -- Path Completion
+    use "hrsh7th/nvim-cmdline" -- cmdline completion
+    -- Snippets
+    use "L3MON4D3/LuaSnip" -- Snippets Plugin
+    use "rafamadriz/friendly-snippets" -- Snippets for many languages
+    -- LSP
+    -- Automatically set up your configuration after cloning packer.nvim
+    -- Put this at the end after all plugins
+    if packer_bootstrap then
+        require('packer').sync()
+    end
 end)
