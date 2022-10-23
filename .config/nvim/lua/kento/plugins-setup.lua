@@ -34,15 +34,17 @@ return require('packer').startup(function(use)
     use {'nvim-telescope/telescope.nvim', tag = '0.1.0'}
     -- CMP Plugins
     use "hrsh7th/nvim-cmp" -- Completion plugin
-    use "hrsh7th/nvim-buffer" -- Buffer Completion
-    use "hrsh7th/nvim-path" -- Path Completion
-    use "hrsh7th/nvim-cmdline" -- cmdline completion
+    use "hrsh7th/cmp-buffer" -- Buffer Completion
+    use "hrsh7th/cmp-path" -- Path Completion
+    use "hrsh7th/cmp-cmdline" -- cmdline completion
+    use "hrsh7th/cmp-nvim-lsp" -- cmdline completion
     -- Snippets
     use "L3MON4D3/LuaSnip" -- Snippets Plugin
     use "rafamadriz/friendly-snippets" -- Snippets for many languages
     -- LSP
-    -- Automatically set up your configuration after cloning packer.nvim
-    -- Put this at the end after all plugins
+    use "neovim/nvim-lspconfig"
+    use "williamboman/mason-lspconfig.nvim"
+    use "williamboman/mason.nvim"
     if packer_bootstrap then
         require('packer').sync()
     end
