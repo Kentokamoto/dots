@@ -35,3 +35,11 @@ opt.splitbelow = true
 
 -- Mouse support
 opt.mouse = "v" -- Visual mode only
+
+-- Cursor position
+vim.cmd[[augroup RememberCursorPosition
+    autocmd!  
+    autocmd BufRead * autocmd FileType <buffer> ++once
+      \ if &ft !~# 'commit\|rebase' && line("'\"") > 1 && line("'\"") <= line("$") | exe 'normal! g`"' | endif
+augroup END  
+]]
