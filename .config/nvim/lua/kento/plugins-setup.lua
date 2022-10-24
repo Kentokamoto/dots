@@ -47,6 +47,12 @@ return require('packer').startup(function(use)
     use "williamboman/mason.nvim"
     use "jose-elias-alvarez/null-ls.nvim"
 
+    -- Treesitter syntax highlighting
+    use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
+    use "p00f/nvim-ts-rainbow"
+
+    -- Git signs
+    use "antoniomayk/nvim-gitsigns"
     if packer_bootstrap then
         require('packer').sync()
     end

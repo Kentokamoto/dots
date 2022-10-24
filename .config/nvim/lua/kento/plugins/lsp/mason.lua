@@ -10,5 +10,5 @@ end
 mason.setup()
 
 mason_lspconfig.setup({
-    ensure_installed = {"clangd", "pyright", "rust_analyzer"}
+    ensure_installed = {"clangd", "pyright", "rust_analyzer", "sumneko_lua"}
 })
