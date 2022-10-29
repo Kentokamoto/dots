@@ -4,7 +4,8 @@ if not null_ls_setup then
 end
 
 null_ls.setup({
-sources = {
+    debug = true,
+    sources = {
         -- Python
         require("null-ls").builtins.formatting.black,
         require("null-ls").builtins.diagnostics.flake8,
@@ -17,4 +18,17 @@ sources = {
         require("null-ls").builtins.formatting.stylua,
 
     },
+    -- you can reuse a shared lspconfig on_attach callback here
+    on_attach = function(client, bufnr)
+        if client.supports_method("textDocument/formatting") then
+            vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+            vim.api.nvim_create_autocmd("BufWritePre", {
+                group = augroup,
+                buffer = bufnr,
+                callback = function()
+                    vim.lsp.buf.format({ bufnr = bufnr })
+                end,
+            })
+        end
+    end,
 })

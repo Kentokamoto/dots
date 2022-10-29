@@ -12,7 +12,7 @@ vim.keymap.set("n", "<leader>tp", ":tabp<CR>") -- Prev tab
 vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- Open File Explorer
 
 -- Telescope
-vim.keymap.set("n", "<leader>ff", "<cmd> Telescope find_files<CR>") -- Open File Explorer
+vim.keymap.set("n", "<leader>ff", "<cmd> Telescope git_files<CR>") -- Open File Explorer
 vim.keymap.set("n", "<leader>fs", "<cmd> Telescope live_grep<CR>") -- Open File Explorer
 vim.keymap.set("n", "<leader>fc", "<cmd> Telescope grep_string<CR>") -- Open File Explorer
 vim.keymap.set("n", "<leader>fb", "<cmd> Telescope buffers<CR>") -- Open File Explorer
