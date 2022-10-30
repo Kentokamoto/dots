@@ -16,6 +16,8 @@ null_ls.setup({
         require("null-ls").builtins.diagnostics.clang_check,
         -- Lua
         require("null-ls").builtins.formatting.stylua,
+        -- HTML
+        require("null-ls").builtins.formatting.prettier,
 
     },
     -- you can reuse a shared lspconfig on_attach callback here

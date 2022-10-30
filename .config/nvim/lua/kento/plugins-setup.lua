@@ -38,6 +38,7 @@ return require('packer').startup(function(use)
     use "hrsh7th/cmp-path" -- Path Completion
     use "hrsh7th/cmp-cmdline" -- cmdline completion
     use "hrsh7th/cmp-nvim-lsp" -- cmdline completion
+    use "windwp/nvim-autopairs" -- Parenthesis autopair
     -- Snippets
     use "L3MON4D3/LuaSnip" -- Snippets Plugin
     use "rafamadriz/friendly-snippets" -- Snippets for many languages
@@ -50,6 +51,7 @@ return require('packer').startup(function(use)
     -- Treesitter syntax highlighting
     use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
     use "p00f/nvim-ts-rainbow"
+    use "windwp/nvim-ts-autotag" -- HTML Autotagging
 
     -- Git signs
     use "antoniomayk/nvim-gitsigns"
