@@ -62,7 +62,6 @@ lspconfig["rust_analyzer"].setup({
 })
 
 lspconfig["html"].setup({
-    on_attach = on_attach,
-    capabilities=capabilities,
+	on_attach = on_attach,
+	capabilities = capabilities,
 })
-
