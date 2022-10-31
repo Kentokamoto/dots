@@ -8,7 +8,7 @@ vim.keymap.set("n", "<leader>tn", ":tabn<CR>") -- Next tab
 vim.keymap.set("n", "<leader>tp", ":tabp<CR>") -- Prev tab
 
 -- Nvim Tree
-vim.keymap.set("n", "<leader>t", ":NvimTreeToggle<CR>") -- Open File Explorer
+vim.keymap.set("n", "<leader><space>", ":NvimTreeToggle<CR>") -- Open File Explorer
 
 -- Telescope
 vim.keymap.set("n", "<leader>ff", "<cmd> Telescope git_files<CR>") -- Open File Explorer
