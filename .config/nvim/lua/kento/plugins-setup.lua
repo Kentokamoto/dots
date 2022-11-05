@@ -23,6 +23,7 @@ vim.cmd([[
 return require("packer").startup(function(use)
 	use("wbthomason/packer.nvim")
 	use("shaunsingh/nord.nvim")
+    use("catppuccin/nvim")
 	use("christoomey/vim-tmux-navigator")
 	-- File Explorer
 	use("nvim-tree/nvim-tree.lua")
