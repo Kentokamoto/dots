@@ -16,3 +16,7 @@ vim.keymap.set("n", "<leader>fs", "<cmd> Telescope live_grep<CR>") -- Open File 
 vim.keymap.set("n", "<leader>fc", "<cmd> Telescope grep_string<CR>") -- Open File Explorer
 vim.keymap.set("n", "<leader>fb", "<cmd> Telescope buffers<CR>") -- Open File Explorer
 vim.keymap.set("n", "<leader>fh", "<cmd> Telescope help_tags<CR>") -- Open File Explorer
+
+-- JSON Formatting
+vim.keymap.set("n", "<leader>jq", ":%!jq .<CR>")
+vim.keymap.set("v", "<leader>jq", ":%!jq .<CR>")
