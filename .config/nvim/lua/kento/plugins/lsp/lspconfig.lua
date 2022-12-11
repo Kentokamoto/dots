@@ -65,3 +65,8 @@ lspconfig["html"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
+
+lspconfig["emmet_ls"].setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})

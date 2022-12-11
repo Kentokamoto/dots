@@ -36,6 +36,7 @@ return require("packer").startup(function(use)
 		run = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
 	})
 	use({ "nvim-telescope/telescope.nvim", tag = "0.1.0" })
+	use("folke/which-key.nvim")
 	-- CMP Plugins
 	use("hrsh7th/nvim-cmp") -- Completion plugin
 	use("hrsh7th/cmp-buffer") -- Buffer Completion
@@ -44,7 +45,8 @@ return require("packer").startup(function(use)
 	use("hrsh7th/cmp-nvim-lsp") -- cmdline completion
 	use("windwp/nvim-autopairs") -- Parenthesis autopair
 	-- Snippets
-	use("L3MON4D3/LuaSnip") -- Snippets Plugin
+	use({ "L3MON4D3/LuaSnip", tag = "v1.1.0" }) -- Snippets Plugin
+	use("saadparwaiz1/cmp_luasnip") -- Need for luasnip
 	use("rafamadriz/friendly-snippets") -- Snippets for many languages
 	-- LSP
 	use("neovim/nvim-lspconfig")

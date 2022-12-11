@@ -7,6 +7,13 @@ if not actions_setup then
 	return
 end
 
+local whichkey_setup, whichkey = pcall(require, "which-key")
+if not whichkey_setup then
+	return
+end
+
+whichkey.setup()
+
 telescope.setup({
 	defaults = {
 		mappings = {

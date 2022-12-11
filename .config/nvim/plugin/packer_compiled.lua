@@ -99,6 +99,11 @@ _G.packer_plugins = {
     path = "/Users/kentokamoto/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
   },
+  cmp_luasnip = {
+    loaded = true,
+    path = "/Users/kentokamoto/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
+    url = "https://github.com/saadparwaiz1/cmp_luasnip"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/Users/kentokamoto/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -218,6 +223,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/kentokamoto/.local/share/nvim/site/pack/packer/start/vim-tmux-navigator",
     url = "https://github.com/christoomey/vim-tmux-navigator"
+  },
+  ["which-key.nvim"] = {
+    loaded = true,
+    path = "/Users/kentokamoto/.local/share/nvim/site/pack/packer/start/which-key.nvim",
+    url = "https://github.com/folke/which-key.nvim"
   }
 }
 
