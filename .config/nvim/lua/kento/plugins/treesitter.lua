@@ -11,7 +11,8 @@ end
 require("nvim-ts-autotag").setup()
 
 context.setup({
-	mode = "topline",
+	mode = "cursor",
+	separator = "-",
 })
 
 configs.setup({
