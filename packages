@@ -1,7 +1,4 @@
-ALL vim
-ALL emacs
-ALL git
-SNAP spotify
+ALL neovim
 ALL tmux
 ARCH sway
 ALL curl
@@ -23,6 +20,10 @@ ALL pandoc
 ALL python
 ALL gimp
 ALL wget
+ALL rg
 ALL fzf
 ALL pyenv
 ALL pyenv-virtualenv
+ALL oh-my-zsh
+ALL tpm
+ALL NerdFonts

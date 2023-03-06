@@ -119,6 +119,7 @@ alias def="/usr/bin/sdcv --color"
 alias beep="ping 8.8.8.8"
 alias emacs="emacs -nw"
 alias iftop="sudo iftop -i en0"
+alias mongostart="mongod --config /opt/homebrew/etc/mongod.conf --fork"
 #vi mode
 #bindkey -v
 #emacs mode
@@ -153,7 +154,15 @@ fi
 export PATH="$HOME/.pyenv/bin:$PATH"
 export PATH=$HOME/.local/bin:$PATH
 eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+
+# CTRL-/ to toggle small preview window to see the full command
+# CTRL-Y to copy the command into clipboard using pbcopy
+export FZF_CTRL_R_OPTS="
+  --preview 'echo {}' --preview-window up:3:hidden:wrap
+  --bind 'ctrl-/:toggle-preview'
+  --bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'
+  --color header:italic
+  --header 'Press CTRL-Y to copy command into clipboard'"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export PATH="/usr/local/opt/curl/bin:$PATH"
