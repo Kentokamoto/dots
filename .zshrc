@@ -153,6 +153,7 @@ fi
 
 export PATH="$HOME/.pyenv/bin:$PATH"
 export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/.local/share/nvim/mason/bin:$PATH
 eval "$(pyenv init -)"
 
 # CTRL-/ to toggle small preview window to see the full command
@@ -170,3 +171,12 @@ export PATH="/usr/local/opt/curl/bin:$PATH"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# Ruby
+export GEM_HOME=$HOME/.gems
+export PATH=$HOME/.gems/bin:$PATH
+source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
+source /opt/homebrew/opt/chruby/share/chruby/auto.sh
+chruby ruby-3.1.3
+
+
