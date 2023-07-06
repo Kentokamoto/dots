@@ -1,7 +1,18 @@
 return {
-  { "folke/persistence.nvim", enabled = false },
   {
-    "akinsho/bufferline.nvim",
+    "nvim-pack/nvim-spectre",
+    enabled = false,
+  },
+  {
+    "ggandor/flit.nvim",
+    enabled = false,
+  },
+  {
+    "ggandor/leap.nvim",
+    enabled = false,
+  },
+  {
+    "echasnovski/mini.bufremove",
     enabled = false,
   },
 }
