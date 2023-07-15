@@ -18,6 +18,9 @@ return {
           nls.builtins.formatting.black,
           -- Rust
           nls.builtins.formatting.rustfmt,
+          -- CPP
+          nls.builtins.diagnostics.clang_check,
+          nls.builtins.formatting.clang_format,
         },
       }
     end,
