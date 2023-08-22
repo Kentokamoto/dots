@@ -13,6 +13,9 @@ export QT_SELECT=5
 export WM=sway
 export SWAY_CURSOR_THEME=Adwaita
 
+export VISUAL=nvim
+export EDITOR=nvim
+
 # Compiler Flags
 export CPATH=/opt/homebrew/include
 export LIBRARY_PATH=/opt/homebrew/lib
