@@ -7,6 +7,7 @@ return {
       ensure_installed = {
         "rust-analyzer",
         "ruff-lsp",
+        "prettierd",
         -- "flake8",
       },
     },

@@ -32,6 +32,7 @@ return {
       },
       servers = {
         jsonls = {},
+
         lua_ls = {
           -- mason = false, -- set to false if you don't want this server to be installed with mason
           -- Use this to add any additional keymaps
@@ -65,6 +66,9 @@ return {
               },
             },
           },
+        },
+        tailwindcss = {
+          filetypes_exclude = { "markdown" },
         },
       },
       format_notify = false,
