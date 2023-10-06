@@ -4,4 +4,5 @@
 .config/caffein/
 .config/menus/
 .config/chromium/
+.config/nvim/lazy-lock.json
 *.swp
