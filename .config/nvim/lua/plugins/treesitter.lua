@@ -7,8 +7,9 @@ parser_config.embedded_template = {
     requires_generate_from_grammar = true,
   },
 }
-local ft_to_parser = require("nvim-treesitter.parsers").filetype_to_parsername
-ft_to_parser.ejs = "embedded_template"
+vim.treesitter.language.register("embedded_template", "ejs")
+--local ft_to_parser = require("nvim-treesitter.parsers").filetype_to_parsername
+--ft_to_parser.ejs = "embedded_template"
 
 return {
   {
