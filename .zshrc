@@ -143,8 +143,8 @@ fi
 
 if [[ ($(arch) == "arm64") ]]; then
     eval $(/opt/homebrew/bin/brew shellenv)
-fi
-
+else
+    eval $(/usr/local/bin/brew shellenv)
 if [[ $(command -v brew &>/dev/null) -eq 0 ]]; then
     eval $(brew shellenv)
 fi

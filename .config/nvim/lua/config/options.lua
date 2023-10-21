@@ -13,3 +13,5 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   pattern = "*.kdl",
   command = "set filetype=kdl",
 })
+
+vim.opt.maxmempattern = 10000
