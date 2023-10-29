@@ -38,7 +38,6 @@ auto-format = true
 name = "python"
 scope = "source.python"
 language-servers = [ "ruff-lsp" ]
-config = { settings = { args = [] } }
 formatter = { command = "black", args = ["--quiet", "-"] }
 auto-format = true
 
