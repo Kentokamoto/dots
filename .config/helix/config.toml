@@ -1,4 +1,4 @@
-theme = "tokyonight_storm"
+theme = "tokyonight"
 
 [editor]
 bufferline="multiple"
@@ -8,3 +8,12 @@ insert= "bar"
 
 [keys.normal]
 esc = ["collapse_selection", "keep_primary_selection"]
+
+[editor.statusline]
+left = ["mode", "spinner", "selections", "version-control"]
+center = ["file-name"]
+right = ["diagnostics","position", "position-percentage", "file-encoding", "file-line-ending", "file-type"]
+separator = "│"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
