@@ -40,7 +40,7 @@ command = "efm-langserver"
 
 [language-server.efm-lsp-prettier.config]
 documentFormatting = true
-languages = { typescript = [ { formatCommand = "prettier --stdin-filepath ${INPUT}", formatStdin = true}], javascript = [ { formatCommand = "prettier --stdin-filepath ${INPUT}", formatStdin = true}]}
+languages = { typescript = [ { formatCommand = "prettier --stdin-filepath ${INPUT} --parser typescript", formatStdin = true}], javascript = [ { formatCommand = "prettier --stdin-filepath ${INPUT} --parser typescript", formatStdin = true}]}
 
 [[language]]
 name = "javascript"
@@ -48,7 +48,7 @@ name = "javascript"
 # formatter = {command = "prettier", args = ["--parser", "typescript"]}
 # formatter = { command = "dprint", args = [ "fmt", "--stdin", "javascript", "--config", "~/.config/dprint.json"] }
 language-servers = [ 
-  { name = "typescript-language-server" },
+  { name = "typescript-language-server", except-features=["format"]},
   "eslint",
   "efm-lsp-prettier",
 ]
@@ -59,7 +59,7 @@ name = "typescript"
 formatter = {command = "prettier", args = ["--parser", "typescript"]}
 # formatter = { command = "dprint", args = [ "fmt", "--stdin", "javascript", "--config", "~/.config/dprint.json"] }
 language-servers = [ 
-  { name = "typescript-language-server" },
+  { name = "typescript-language-server", except-features=["format"]},
   "eslint",
   "efm-lsp-prettier",
 ]
@@ -70,7 +70,7 @@ name = "tsx"
 formatter = {command = "prettier", args = ["--parser", "typescript"]}
 # formatter = { command = "dprint", args = [ "fmt", "--stdin", "javascript", "--config", "~/.config/dprint.json"] }
 language-servers = [ 
-  { name = "typescript-language-server" },
+  { name = "typescript-language-server", except-features=["format"]},
   "eslint",
   "efm-lsp-prettier",
 ]
