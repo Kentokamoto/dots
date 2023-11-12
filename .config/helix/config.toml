@@ -2,6 +2,9 @@ theme = "tokyonight"
 
 [editor]
 bufferline="multiple"
+cursorline = true
+color-modes = true
+
 
 [editor.cursor-shape]
 insert= "bar"
@@ -21,3 +24,6 @@ mode.select = "SELECT"
 [editor.lsp]
 display-messages = true
 display-inlay-hints = true
+
+[editor.indent-guides]
+render = true

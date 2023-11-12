@@ -48,9 +48,9 @@ name = "javascript"
 # formatter = {command = "prettier", args = ["--parser", "typescript"]}
 # formatter = { command = "dprint", args = [ "fmt", "--stdin", "javascript", "--config", "~/.config/dprint.json"] }
 language-servers = [ 
-  "efm-lsp-prettier",
   { name = "typescript-language-server" },
   "eslint",
+  "efm-lsp-prettier",
 ]
 
 [[language]]
@@ -61,6 +61,7 @@ formatter = {command = "prettier", args = ["--parser", "typescript"]}
 language-servers = [ 
   { name = "typescript-language-server" },
   "eslint",
+  "efm-lsp-prettier",
 ]
 
 [[language]]
@@ -71,6 +72,7 @@ formatter = {command = "prettier", args = ["--parser", "typescript"]}
 language-servers = [ 
   { name = "typescript-language-server" },
   "eslint",
+  "efm-lsp-prettier",
 ]
 
 [[language]]
@@ -81,6 +83,7 @@ formatter = {command = "prettier", args = ["--parser", "typescript"]}
 language-servers = [ 
   { name = "typescript-language-server" },
   "eslint",
+  "efm-lsp-prettier",
 ]
 
 [[language]]
