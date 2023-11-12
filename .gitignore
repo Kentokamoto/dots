@@ -5,4 +5,5 @@
 .config/menus/
 .config/chromium/
 .config/nvim/lazy-lock.json
+.config/helix/runtime/
 *.swp
