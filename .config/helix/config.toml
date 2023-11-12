@@ -10,10 +10,14 @@ insert= "bar"
 esc = ["collapse_selection", "keep_primary_selection"]
 
 [editor.statusline]
-left = ["mode", "spinner", "selections", "version-control"]
+left = ["mode","selections", "version-control"]
 center = ["file-name"]
-right = ["diagnostics","position", "position-percentage", "file-encoding", "file-line-ending", "file-type"]
+right = ["diagnostics","position", "position-percentage", "file-encoding", "file-line-ending", "file-type", "spinner"]
 separator = "│"
 mode.normal = "NORMAL"
 mode.insert = "INSERT"
 mode.select = "SELECT"
+
+[editor.lsp]
+display-messages = true
+display-inlay-hints = true
