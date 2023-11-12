@@ -155,7 +155,6 @@ fi
 
 export PATH="$HOME/.pyenv/bin:$PATH"
 export PATH=$HOME/.local/bin:$PATH
-export PATH=$HOME/.local/share/nvim/mason/bin:$PATH
 eval "$(pyenv init -)"
 
 # CTRL-/ to toggle small preview window to see the full command
