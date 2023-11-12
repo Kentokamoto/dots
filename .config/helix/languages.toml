@@ -10,29 +10,78 @@ formatter = { command = 'prettier', args = ["--parser", "json"] }
 name = "css"
 formatter = { command = 'prettier', args = ["--parser", "css"] }
 
+[language-server.typescript-language-server]
+command = "typescript-language-server"
+args = ["--stdio"]
+
+[language-server.eslint]
+command = "vscode-eslint-language-server"
+args = ["--stdio"]
+
+[language-server.eslint.config]
+format = true
+codeActionsOnSave = { mode = "all", "source.fixAll.eslint" = true }
+nodePath = ""
+quiet = false
+rulesCustomizations = []
+run = "onType"
+useESLintClass = false
+validate = "on"
+experimental = {}
+problems = { shortenToSingleLine = false }
+workingDirectory = { mode = "auto" }
+
+[language-server.eslint.config.codeAction]
+disableRuleComment = { enable = true, location = "separateLine" }
+showDocumentation = { enable = false }
+
+[language-server.efm-lsp-prettier]
+command = "efm-langserver"
+
+[language-server.efm-lsp-prettier.config]
+documentFormatting = true
+languages = { typescript = [ { formatCommand = "prettier --stdin-filepath ${INPUT}", formatStdin = true}], javascript = [ { formatCommand = "prettier --stdin-filepath ${INPUT}", formatStdin = true}]}
+
 [[language]]
 name = "javascript"
-language-servers = [ "typescript-language-server", "tailwindcss-react", "eslint", "emmet-ls"]
-formatter = { command = 'prettier', args = ["--parser", "typescript"] }
-auto-format = true
+# auto-format = true
+# formatter = {command = "prettier", args = ["--parser", "typescript"]}
+# formatter = { command = "dprint", args = [ "fmt", "--stdin", "javascript", "--config", "~/.config/dprint.json"] }
+language-servers = [ 
+  "efm-lsp-prettier",
+  { name = "typescript-language-server" },
+  "eslint",
+]
 
 [[language]]
 name = "typescript"
-language-servers = [  "typescript-language-server", "tailwindcss-react", "eslint", "emmet-ls", "snippets-ls"]
-formatter = { command = 'prettier', args = ["--parser", "typescript"] }
-auto-format = true
+# auto-format = true
+formatter = {command = "prettier", args = ["--parser", "typescript"]}
+# formatter = { command = "dprint", args = [ "fmt", "--stdin", "javascript", "--config", "~/.config/dprint.json"] }
+language-servers = [ 
+  { name = "typescript-language-server" },
+  "eslint",
+]
 
 [[language]]
 name = "tsx"
-language-servers = [  "typescript-language-server", "tailwindcss-react", "eslint", "emmet-ls", "snippets-ls"]
-formatter = { command = 'prettier', args = ["--parser", "typescript"] }
-auto-format = true
+# auto-format = true
+formatter = {command = "prettier", args = ["--parser", "typescript"]}
+# formatter = { command = "dprint", args = [ "fmt", "--stdin", "javascript", "--config", "~/.config/dprint.json"] }
+language-servers = [ 
+  { name = "typescript-language-server" },
+  "eslint",
+]
 
 [[language]]
 name = "jsx"
-language-servers = [  "typescript-language-server", "tailwindcss-react", "eslint", "emmet-ls"]
-formatter = { command = 'prettier', args = ["--parser", "typescript"] }
-auto-format = true
+# auto-format = true
+formatter = {command = "prettier", args = ["--parser", "typescript"]}
+# formatter = { command = "dprint", args = [ "fmt", "--stdin", "javascript", "--config", "~/.config/dprint.json"] }
+language-servers = [ 
+  { name = "typescript-language-server" },
+  "eslint",
+]
 
 [[language]]
 name = "python"
