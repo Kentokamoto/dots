@@ -33,35 +33,35 @@ workingDirectory = { mode = "auto" }
 
 [language-server.eslint.config.codeAction]
 disableRuleComment = { enable = true, location = "separateLine" }
-showDocumentation = { enable = false }
+showDocumentation = { enable = true }
 
 [language-server.efm-lsp-prettier]
 command = "efm-langserver"
 
 [language-server.efm-lsp-prettier.config]
 documentFormatting = true
-languages = { typescript = [ { formatCommand = "prettier --stdin-filepath ${INPUT} --parser typescript", formatStdin = true}], javascript = [ { formatCommand = "prettier --stdin-filepath ${INPUT} --parser typescript", formatStdin = true}]}
+languages = { typescript = [ { formatCommand = "prettier --stdin-filepath ${INPUT} --parser typescript", formatStdin = true}], javascript = [ { formatCommand = "prettier-eslint --stdin ${INPUT} --parser typescript", formatStdin = true}]}
 
 [[language]]
 name = "javascript"
-# auto-format = true
-# formatter = {command = "prettier", args = ["--parser", "typescript"]}
+auto-format = false
+# formatter = {command = "prettier-eslint", args = ["--parser", "typescript"]}
 # formatter = { command = "dprint", args = [ "fmt", "--stdin", "javascript", "--config", "~/.config/dprint.json"] }
 language-servers = [ 
   { name = "typescript-language-server", except-features=["format"]},
   "eslint",
-  "efm-lsp-prettier",
+  # "efm-lsp-prettier",
 ]
 
 [[language]]
 name = "typescript"
-# auto-format = true
+auto-format = false
 formatter = {command = "prettier", args = ["--parser", "typescript"]}
 # formatter = { command = "dprint", args = [ "fmt", "--stdin", "javascript", "--config", "~/.config/dprint.json"] }
 language-servers = [ 
   { name = "typescript-language-server", except-features=["format"]},
   "eslint",
-  "efm-lsp-prettier",
+  # "efm-lsp-prettier",
 ]
 
 [[language]]
