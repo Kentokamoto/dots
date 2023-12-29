@@ -15,3 +15,4 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 })
 
 vim.opt.maxmempattern = 10000
+vim.opt.shiftwidth = 4

@@ -45,12 +45,12 @@ languages = { typescript = [ { formatCommand = "prettier --stdin-filepath ${INPU
 [[language]]
 name = "javascript"
 auto-format = false
-# formatter = {command = "prettier-eslint", args = ["--parser", "typescript"]}
+formatter = {command = "prettier", args = ["--parser", "typescript"]}
 # formatter = { command = "dprint", args = [ "fmt", "--stdin", "javascript", "--config", "~/.config/dprint.json"] }
 language-servers = [ 
   { name = "typescript-language-server", except-features=["format"]},
   "eslint",
-  # "efm-lsp-prettier",
+  #"efm-lsp-prettier",
 ]
 
 [[language]]
@@ -88,10 +88,16 @@ language-servers = [
 
 [[language]]
 name = "python"
-scope = "source.python"
-language-servers = [ "ruff-lsp" ]
-formatter = { command = "black", args = ["--quiet", "-"] }
-auto-format = true
+roots = ["pyproject.toml"]
+language-servers = ["pyright", "ruff"]
+
+[language-server.pyright]
+command = "pyright-langserver"
+args = ["--stdio"]
+
+[language-server.ruff]
+command = "ruff-lsp"
+config = { settings = { run = "onSave" } }
 
 [[language]]
 name = "rust"
