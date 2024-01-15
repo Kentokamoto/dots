@@ -1,7 +1,12 @@
+[window]
 decorations = "full"
-history = 10000
 option_as_alt = "Both"
 startup_mode = "Windowed"
+opacity = 0.9
+blur = true
+
+[scrolling]
+history = 10000
 
 [[colors.indexed_colors]]
 color = "0xff9e64"
@@ -371,12 +376,12 @@ mods = "Control"
 
 [[keyboard.bindings]]
 chars = "\u001B`"
-key = "Grave"
+key = "`"
 mods = "Alt"
 
 [[keyboard.bindings]]
 chars = "\u001B~"
-key = "Grave"
+key = "`"
 mods = "Alt|Shift"
 
 [[keyboard.bindings]]
