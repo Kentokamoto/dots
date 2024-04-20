@@ -1,0 +1,7 @@
+#Local Environmental Variables
+export VISUAL=nvim
+export EDITOR=nvim
+
+# Other Env Variables
+export PAGER="less -S -X"
+source "$HOME/.cargo/env"

@@ -2,7 +2,6 @@ ALL neovim
 ALL tmux
 ARCH sway
 ALL curl
-ALL mosh
 UBUNTU gnome-tweak-tool
 UBUNTU gnome-shell-extensions
 UBUNTU chrome-gnome-shell
@@ -27,3 +26,4 @@ ALL pyenv-virtualenv
 ALL oh-my-zsh
 ALL tpm
 ALL NerdFonts
+ALL docker
