@@ -70,6 +70,12 @@ return {
         tailwindcss = {
           filetypes_exclude = { "markdown" },
         },
+        csharp_ls = {
+          mason = false,
+          settings = {
+            path = { "/Users/kento_okamoto/.dotnet/tools/csharp-ls" },
+          },
+        },
       },
       format_notify = false,
       autoformat = true,
