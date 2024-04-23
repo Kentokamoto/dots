@@ -151,7 +151,40 @@ if [[ $(command -v brew &>/dev/null) -eq 0 ]]; then
     eval $(brew shellenv)
 fi
 
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+load-nvm() {
+    export NVM_DIR=~/.nvm
+    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+}
+
+nvm() {
+    unset -f nvm
+    load-nvm
+    nvm "$@"
+}
+
+node() {
+    unset -f node
+    load-nvm
+    node "$@"
+}
+
+npm() {
+    unset -f npm
+    load-nvm
+    npm "$@"
+}
+
+pnpm() {
+    unset -f pnpm
+    load-nvm
+    pnpm "$@"
+}
+
+yarn() {
+    unset -f yarn
+    load-nvm
+    yarn "$@"
+}
 
 export PATH="$HOME/.pyenv/bin:$PATH"
 export PATH=$HOME/.local/bin:$PATH
