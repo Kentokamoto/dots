@@ -134,6 +134,7 @@ SAVEHIST=2000
 IGNOREEOF=10
 
 # Work Related Things
+#Go
 if [[ -d "$HOME/go/" ]]; then
     export PATH=$PATH:/usr/local/go/bin
 fi
@@ -141,6 +142,7 @@ if [[ -d "/Applications/Visual\ Studio\ Code.app/" ]]; then
     export PATH=$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin
 fi
 
+# homebrew
 if [[ ($(arch) == "arm64") ]]; then
     eval $(/opt/homebrew/bin/brew shellenv)
 else
@@ -150,7 +152,9 @@ fi
 if [[ $(command -v brew &>/dev/null) -eq 0 ]]; then
     eval $(brew shellenv)
 fi
+export HOMEBREW_NO_AUTO_UPDATE=1 
 
+# Lazy Load NVM
 load-nvm() {
     export NVM_DIR=~/.nvm
     [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
