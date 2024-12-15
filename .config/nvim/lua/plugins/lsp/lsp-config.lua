@@ -7,16 +7,12 @@ return {
       { "folke/neodev.nvim", opts = {} },
       "mason.nvim",
       "williamboman/mason-lspconfig.nvim",
-      {
-        "hrsh7th/cmp-nvim-lsp",
-        cond = function()
-          return require("lazyvim.util").has("nvim-cmp")
-        end,
-      },
+      "saghen/blink.cmp",
     },
     ---@class PluginLspOpts
     opts = {
       -- options for vim.diagnostic.config()
+      inlay_hints = { enabled = false },
       diagnostics = {
         underline = true,
         update_in_insert = false,
@@ -74,6 +70,15 @@ return {
           mason = false,
           settings = {
             path = { "/Users/kento_okamoto/.dotnet/tools/csharp-ls" },
+          },
+        },
+        harper_ls = {
+          settings = {
+            ["harper_ls"] = {
+              linters = {
+                long_sentences = false,
+              },
+            },
           },
         },
       },

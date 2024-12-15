@@ -92,7 +92,7 @@ export MANPATH="/usr/local/man:$MANPATH"
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-  export EDITOR='vim'
+  export EDITOR='nvim'
 fi
 
 # Compilation flags
@@ -218,3 +218,11 @@ export SDKMAN_DIR="$HOME/.sdkman"
 #chruby ruby-3.1.3
 
 
+eval "$(direnv hook bash)"
+
+export PATH="/opt/homebrew/opt/node@18/bin:$PATH"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+autoload edit-command-line
+zle -N edit-command-line
+bindkey '^Xe' edit-command-line
