@@ -75,8 +75,10 @@ return {
         harper_ls = {
           settings = {
             ["harper_ls"] = {
+              dianosticSeverity = "information",
               linters = {
                 long_sentences = false,
+                sentence_capitalization = true,
               },
             },
           },

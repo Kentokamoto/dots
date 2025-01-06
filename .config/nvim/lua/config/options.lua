@@ -3,6 +3,7 @@
 -- Add any additional options here
 vim.opt.mouse = "vn"
 vim.opt.relativenumber = false
+vim.opt.redrawtime = 3000
 
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   pattern = "*.ejs",
