@@ -1,8 +1,8 @@
 return {
-  "folke/snacks.nvim",
-  opts = {
-    dim = {
-      enabled = true,
+  {
+    "snacks.nvim",
+    opts = {
+      bigfile = { enabled = true },
     },
   },
 }
