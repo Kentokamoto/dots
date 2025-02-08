@@ -1,9 +1,13 @@
 return {
   {
-    "catppuccin/nvim",
-    lazy = true,
-    name = "catppuccin",
+    "catppuccin",
     opts = {
+      transparent_background = false,
+      dim_inactive = {
+        enabled = true, -- dims the background color of inactive window
+        shade = "dark",
+        percentage = 5, -- percentage of the shade to apply to the inactive window
+      },
       integrations = {
         aerial = true,
         alpha = true,
@@ -53,6 +57,12 @@ return {
           end
         end,
       },
+    },
+  },
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "catppuccin",
     },
   },
 }
