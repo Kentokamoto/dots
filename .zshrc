@@ -120,6 +120,9 @@ alias beep="ping 8.8.8.8"
 alias emacs="emacs -nw"
 alias iftop="sudo iftop -i en0"
 alias mongostart="mongod --config /opt/homebrew/etc/mongod.conf --fork"
+if [ -f ~/.zsh_work_aliases ]; then
+  source ~/.zsh_work_aliases
+fi
 #vi mode
 #bindkey -v
 #emacs mode
@@ -226,3 +229,6 @@ export PATH="/opt/homebrew/opt/node@18/bin:$PATH"
 autoload edit-command-line
 zle -N edit-command-line
 bindkey '^Xe' edit-command-line
+
+
+
