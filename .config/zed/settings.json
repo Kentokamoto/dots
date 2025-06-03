@@ -1,0 +1,120 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "active_pane_modifiers": {
+    "border_size": 0,
+    "inactive_opacity": 0.9
+  },
+  "auto_install_extensions": {
+    "css": true,
+    "dockerfile": true,
+    "docker-compose": true,
+    "html": true,
+    "python": true,
+    "rust": true,
+    "typescript": true
+  },
+  "auto_update": true,
+  "agent": {
+    "default_model": {
+      "provider": "ollama",
+      "model": "llama3:latest"
+    },
+    "version": "2"
+  },
+  "base_keymap": "VSCode",
+  "buffer_font_family": "Hack Nerd Font",
+  "buffer_font_features": {
+    "calt": false // Disable Ligatures
+  },
+  "buffer_font_size": 15,
+  "confirm_quit": true,
+  "edit_predictions": {
+    "disabled_globs": [
+      "**/.env*",
+      "**/*.pem",
+      "**/*.key",
+      "**/*.cert",
+      "**/*.crt",
+      "**/.dev.vars",
+      "**/secrets.yml"
+    ]
+  },
+  "edit_predictions_disabled_in": ["comment", "string"],
+  "enable_language_server": true,
+  "ensure_final_newline_on_save": true,
+  "file_types": {
+    "Dockerfile": ["Dockerfile*"]
+  },
+  "tabs": {
+    "file_icons": true,
+    "git_status": true,
+    "activate_on_close": "history"
+  },
+  "git": {
+    "gutter_debounce": null,
+    "inline_blame": {
+      "enabled": false
+    },
+    "hunk_style": null
+  },
+  "indent_guides": {
+    "line_width": 2,
+    "coloring": "indent_aware"
+  },
+  "inlay_hints": {
+    "enabled": true,
+    "show_type_hints": true
+  },
+  "journal": {
+    "path": "~/Documents/zed_journal",
+    "hour_format": "hour24"
+  },
+  "languages": {
+    "TypeScript": {
+      "enable_language_server": true,
+      "preferred_line_length": 120
+    },
+    "Rust": {
+      "enable_language_server": true,
+      "preferred_line_length": 120
+    },
+    "JSON": {
+      "tab_size": 4
+    },
+    "Python": {
+      "enable_language_server": true,
+      "preferred_line_length": 120
+    },
+    "Svelte": {
+      "enable_language_server": true,
+      "preferred_line_length": 120
+    },
+    "TSX": {
+      "enable_language_server": true,
+      "preferred_line_length": 120
+    }
+  },
+  "remove_trailing_whitespace_on_save": true,
+  "vim_mode": true,
+  "theme": {
+    "mode": "system",
+    "light": "Catppuccin Mocha",
+    "dark": "One Dark"
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "ui_font_size": 15,
+  "ui_font_family": "Zed Plex Sans",
+  "calls": {
+    "mute_on_join": true
+  }
+}

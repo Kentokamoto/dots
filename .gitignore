@@ -6,4 +6,6 @@
 .config/chromium/
 .config/nvim/lazy-lock.json
 .config/helix/runtime/
+.config/zed/conversations/**
+.config/zed/prompts/**
 *.swp
