@@ -58,6 +58,7 @@
     "activate_on_close": "history"
   },
   "git": {
+    "git_gutter": "tracked_files",
     "gutter_debounce": null,
     "inline_blame": {
       "enabled": false
@@ -99,6 +100,23 @@
     "TSX": {
       "enable_language_server": true,
       "preferred_line_length": 120
+    }
+  },
+  "language_models": {
+    "ollama": {
+      "api_url": "http://localhost:11434",
+      "available_models": [
+        {
+          "name": "llama3",
+          "max_tokens": 8192,
+          "supports_tools": true
+        },
+        {
+          "name": "gemma3:12b-it-qat",
+          "max_tokens": 128000,
+          "supports_tools": true
+        }
+      ]
     }
   },
   "remove_trailing_whitespace_on_save": true,
